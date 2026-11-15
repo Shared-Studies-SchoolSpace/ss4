@@ -1,37 +1,41 @@
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
-import { M365Icon, SurfaceIcon, WindowsIcon, XboxIcon } from "./icons";
 
 const QUICK_LINKS = [
   {
-    label: "Choose your Microsoft 365",
-    tag: "SUITE",
-    icon: <M365Icon className="w-9 h-9" />,
-    href: "#",
+    label: "Find Secondary Schools",
+    tag: "36 STATES + FCT",
+    iconSrc: "/images/why-icon-1.svg",
+    iconAlt: "Secondary schools search icon",
+    href: "#schools",
   },
   {
-    label: "Shop Surface devices",
-    tag: "HARDWARE",
-    icon: <SurfaceIcon className="w-9 h-9" />,
-    href: "#",
+    label: "Colleges & Universities",
+    tag: "TERTIARY PROGRAMS",
+    iconSrc: "/images/why-icon-2.svg",
+    iconAlt: "Tertiary programs icon",
+    href: "#colleges",
   },
   {
-    label: "Buy Windows 11",
-    tag: "OPERATING SYSTEM",
-    icon: <WindowsIcon className="w-9 h-9" />,
-    href: "#",
+    label: "Direct Admissions",
+    tag: "NO APPLICATION FEE",
+    iconSrc: "/images/why-icon-3.svg",
+    iconAlt: "Direct admissions icon",
+    href: "#admissions",
   },
   {
-    label: "Explore Xbox consoles",
-    tag: "GAMING",
-    icon: <XboxIcon className="w-9 h-9" />,
-    href: "#",
+    label: "Institutional Onboarding",
+    tag: "PARTNER CODE SS4-PRT",
+    iconSrc: "/images/stamp-claim.svg",
+    iconAlt: "Institutional partner onboarding stamp",
+    href: "#partners",
   },
 ];
 
 export function QuickLinks() {
   return (
-    <section className="w-full py-6" aria-label="Quick links">
+    <section className="w-full py-6" aria-label="Quick institutional links">
       <div className="mx-auto max-w-[1600px] px-4 sm:px-8 lg:px-12">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
           {QUICK_LINKS.map((item) => (
@@ -47,8 +51,13 @@ export function QuickLinks() {
 
               {/* Icon Container with subtle background */}
               <div className="p-3.5 bg-[#FAF8F4] group-hover:bg-[#E8EFFF] rounded-[18px] transition-colors mb-3">
-                <div className="transition-transform duration-200 group-hover:scale-110">
-                  {item.icon}
+                <div className="relative w-9 h-9 transition-transform duration-200 group-hover:scale-110">
+                  <Image
+                    src={item.iconSrc}
+                    alt={item.iconAlt}
+                    fill
+                    className="object-contain"
+                  />
                 </div>
               </div>
 

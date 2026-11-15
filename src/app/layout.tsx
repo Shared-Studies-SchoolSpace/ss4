@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Microsoft – AI, Cloud, Productivity, Gaming & Apps (SS4 Varsity Edition)",
-  description: "Explore Microsoft products and services transformed with the SS4 Varsity Design System.",
+  title: "SS4 — An Ecosystem for Academia | Many Institutions, One Space",
+  description: "SS4: An Ecosystem for Academia. Many Institutions, One Space. Connecting secondary schools, colleges, direct admissions, and student communities across Nigeria.",
   icons: {
-    icon: "/favicon.ico",
+    icon: "/images/ss4_logo.jpg",
   },
 };
 

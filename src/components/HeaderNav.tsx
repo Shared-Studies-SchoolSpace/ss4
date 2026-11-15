@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import {
-  MicrosoftLogo,
+  SS4Logo,
   SearchIcon,
   CartIcon,
   UserIcon,
@@ -11,35 +11,65 @@ import {
 } from "./icons";
 
 const NAV_LINKS = [
-  { label: "Microsoft 365", href: "#" },
-  { label: "Teams", href: "#" },
-  { label: "Copilot", href: "#" },
-  { label: "Windows", href: "#" },
-  { label: "Surface", href: "#" },
-  { label: "Xbox", href: "#" },
-  { label: "Support", href: "#" },
+  { label: "K-12 Schools", href: "#schools" },
+  { label: "Colleges & Universities", href: "#colleges" },
+  { label: "Direct Admissions", href: "#admissions" },
+  { label: "State Directories", href: "#states" },
+  { label: "Institutional Partners", href: "#partners" },
+  { label: "About SS4", href: "#about" },
 ];
 
-const ALL_MICROSOFT_CATEGORIES = [
+const ALL_ACADEMIC_CATEGORIES = [
   {
-    category: "Software",
-    items: ["Windows Apps", "AI & Copilot", "OneDrive", "Outlook", "OneNote", "Microsoft Teams"],
+    category: "Secondary Schools",
+    items: [
+      "Lagos State Schools",
+      "Abuja FCT Directory",
+      "Rivers State Schools",
+      "Kaduna State Schools",
+      "Ogun State Schools",
+      "Browse All 36 States",
+    ],
   },
   {
-    category: "PCs & Devices",
-    items: ["Shop Surface", "Computers", "Accessories", "Xbox & Games"],
+    category: "Tertiary Institutions",
+    items: [
+      "Federal Universities",
+      "State Universities",
+      "Private Universities",
+      "Polytechnics & Monotechnics",
+      "Colleges of Education",
+    ],
   },
   {
-    category: "Entertainment",
-    items: ["Xbox Game Pass Ultimate", "Xbox Live Gold", "Xbox games", "PC games"],
+    category: "Direct Admissions",
+    items: [
+      "Direct Entry Pathways",
+      "Partner University Cutoffs",
+      "Admissions Verification",
+      "Zero Application Fee Guide",
+      "Eligibility Check",
+    ],
   },
   {
-    category: "Business",
-    items: ["Microsoft Cloud", "Microsoft Security", "Azure", "Dynamics 365", "Microsoft 365 for business"],
+    category: "Institutional Partners",
+    items: [
+      "Register School (SS4-PRT)",
+      "Google Sheet Verification",
+      "Campus Directory Sync",
+      "Institutional Administrator Portal",
+      "Partnership Guidelines",
+    ],
   },
   {
-    category: "Developer & IT",
-    items: ["Microsoft Developer", "Documentation", "Microsoft Learn", "Visual Studio"],
+    category: "Student Tools",
+    items: [
+      "Academic Shortlist",
+      "Institution Comparisons",
+      "Verified Student Stories",
+      "Cutoff Benchmarks",
+      "FAQ & Student Support",
+    ],
   },
 ];
 
@@ -70,9 +100,9 @@ export function HeaderNav() {
             </svg>
           </button>
 
-          {/* Microsoft Brand Logo with Varsity styling */}
+          {/* SS4 Brand Logo with Varsity styling */}
           <Link href="/" className="flex items-center outline-none focus-visible:ring-2 focus-visible:ring-[#1A56C4] rounded-lg">
-            <MicrosoftLogo />
+            <SS4Logo />
           </Link>
 
           {/* Desktop Primary Nav */}
@@ -89,10 +119,10 @@ export function HeaderNav() {
           </nav>
         </div>
 
-        {/* Right Actions: All Microsoft, Search, Cart, Sign In */}
+        {/* Right Actions: All Institutions, Search, Shortlist, Sign In */}
         <div className="flex items-center gap-2 sm:gap-3">
           
-          {/* All Microsoft Mega-menu trigger */}
+          {/* All Institutions Mega-menu trigger */}
           <div className="relative hidden xl:block">
             <button
               onClick={() => {
@@ -101,16 +131,16 @@ export function HeaderNav() {
               }}
               className="flex items-center gap-2 px-3.5 py-2 text-[14px] font-semibold text-[#111111] hover:text-[#1A56C4] hover:bg-[#1A56C4]/5 rounded-xl transition-all focus:outline-none"
             >
-              <span>All Microsoft</span>
+              <span>All Institutions</span>
               <ChevronDownIcon className={`w-3 h-3 text-[#1A56C4] transition-transform duration-200 ${allMsOpen ? "rotate-180" : ""}`} />
             </button>
 
             {/* SS4 Varsity Mega Menu Dropdown */}
             {allMsOpen && (
-              <div className="absolute right-0 top-[60px] w-[940px] bg-white border border-[#EAEAEA] rounded-[24px] shadow-[0_12px_36px_rgba(0,0,0,0.08)] p-8 grid grid-cols-5 gap-6 z-50 text-[13px]">
-                {ALL_MICROSOFT_CATEGORIES.map((cat) => (
+              <div className="absolute right-0 top-[60px] w-[960px] bg-white border border-[#EAEAEA] rounded-[24px] shadow-[0_12px_36px_rgba(0,0,0,0.08)] p-8 grid grid-cols-5 gap-6 z-50 text-[13px]">
+                {ALL_ACADEMIC_CATEGORIES.map((cat) => (
                   <div key={cat.category} className="space-y-3">
-                    <h4 className="font-space font-bold text-[14px] text-[#111111] uppercase tracking-wider pb-1 border-b border-[#F0EEEA]">
+                    <h4 className="font-space font-bold text-[13px] text-[#111111] uppercase tracking-wider pb-1 border-b border-[#F0EEEA]">
                       {cat.category}
                     </h4>
                     <ul className="space-y-2 text-[#64748B]">
@@ -125,9 +155,9 @@ export function HeaderNav() {
                   </div>
                 ))}
                 <div className="col-span-5 border-t border-[#EAEAEA] pt-4 mt-2 flex items-center justify-between">
-                  <span className="text-xs text-[#64748B]">SS4 Varsity Navigation Grid</span>
-                  <Link href="#" className="text-[13px] font-space font-bold text-[#1A56C4] hover:text-[#B84D00] hover:underline flex items-center gap-1">
-                    VIEW SITEMAP &gt;
+                  <span className="text-xs text-[#64748B]">SS4 Academic Ecosystem Directory</span>
+                  <Link href="#states" className="text-[13px] font-space font-bold text-[#1A56C4] hover:text-[#B84D00] hover:underline flex items-center gap-1">
+                    BROWSE 36 STATES DIRECTORY &gt;
                   </Link>
                 </div>
               </div>
@@ -140,7 +170,7 @@ export function HeaderNav() {
               <div className="flex items-center bg-white border-2 border-[#1A56C4] rounded-[16px] px-3 py-1 shadow-sm">
                 <input
                   type="text"
-                  placeholder="Search products, services, apps..."
+                  placeholder="Search schools, universities, cutoffs..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   autoFocus
@@ -161,7 +191,7 @@ export function HeaderNav() {
                   setAllMsOpen(false);
                 }}
                 className="flex items-center gap-1.5 px-3 py-2 text-[14px] font-semibold text-[#111111] hover:text-[#1A56C4] hover:bg-[#1A56C4]/5 rounded-xl transition-all"
-                aria-label="Search Microsoft.com"
+                aria-label="Search schools and universities"
               >
                 <span className="hidden sm:inline">Search</span>
                 <SearchIcon className="w-4 h-4 text-[#111111]" />
@@ -169,19 +199,19 @@ export function HeaderNav() {
             )}
           </div>
 
-          {/* Cart Icon */}
+          {/* Shortlist Icon */}
           <Link
             href="#"
             className="flex items-center gap-1.5 px-3 py-2 text-[14px] font-semibold text-[#111111] hover:text-[#1A56C4] hover:bg-[#1A56C4]/5 rounded-xl transition-all"
-            aria-label="0 items in shopping cart"
+            aria-label="0 saved institutions in shortlist"
           >
-            <span className="hidden sm:inline">Cart</span>
+            <span className="hidden sm:inline">Shortlist</span>
             <CartIcon className="w-4 h-4 text-[#111111]" />
           </Link>
 
           {/* Sign In CTA - SS4 Outlined Pill */}
           <Link
-            href="#"
+            href="#login"
             className="flex items-center gap-1.5 px-4 py-2 border border-[#CCCCCC] hover:border-[#1A56C4] hover:text-[#1A56C4] bg-white rounded-full text-[13px] font-bold text-[#111111] transition-all shadow-xs"
             aria-label="Sign in to your account"
           >
@@ -206,7 +236,7 @@ export function HeaderNav() {
               </Link>
             ))}
             <div className="pt-2 font-space font-bold text-[14px] text-[#1A56C4]">
-              ALL MICROSOFT
+              ALL INSTITUTIONS
             </div>
           </nav>
         </div>

@@ -4,43 +4,26 @@ import Link from "next/link";
 
 export function SocialFollowStrip() {
   return (
-    <section className="w-full py-6" aria-label="Follow Microsoft">
-      <div className="mx-auto max-w-[1600px] px-4 sm:px-8 lg:px-12 flex items-center">
+    <section className="w-full py-6" aria-label="Follow SS4">
+      <div className="mx-auto max-w-[1600px] px-4 sm:px-8 lg:px-12 flex items-center justify-between flex-wrap gap-4">
         <div className="bg-white border border-[#EAEAEA] rounded-full px-6 py-2.5 shadow-xs flex items-center gap-4">
           <span className="font-space font-bold text-[13px] text-[#111111] uppercase tracking-wider">
-            Follow Microsoft
+            Follow SS4
           </span>
           
           <div className="h-4 w-px bg-[#EAEAEA]" />
 
-          {/* Facebook */}
+          {/* X / Twitter */}
           <Link
-            href="https://www.facebook.com/Microsoft"
+            href="https://x.com"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:scale-110 transition-transform p-1"
-            aria-label="Follow Microsoft on Facebook"
-          >
-            <svg width="22" height="22" viewBox="0 0 32 32" fill="#1877F2">
-              <circle cx="16" cy="16" r="16" />
-              <path
-                d="M18.5 16.5H21L21.5 13H18.5V11C18.5 10.1 18.9 9.5 20.3 9.5H21.5V6.3C20.8 6.2 19.8 6 18.8 6C16.2 6 14.5 7.6 14.5 10.6V13H11.5V16.5H14.5V25H18.5V16.5Z"
-                fill="white"
-              />
-            </svg>
-          </Link>
-
-          {/* X */}
-          <Link
-            href="https://twitter.com/Microsoft"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:scale-110 transition-transform p-1"
-            aria-label="Follow Microsoft on X"
+            aria-label="Follow SS4 on X"
           >
             <div className="relative w-5 h-5">
               <Image
-                src="/images/asset-12.webp"
+                src="/images/social-icons/X.svg"
                 alt="X"
                 fill
                 className="object-contain"
@@ -48,18 +31,54 @@ export function SocialFollowStrip() {
             </div>
           </Link>
 
-          {/* LinkedIn */}
+          {/* Instagram */}
           <Link
-            href="https://www.linkedin.com/company/microsoft"
+            href="https://instagram.com"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:scale-110 transition-transform p-1"
-            aria-label="Follow Microsoft on LinkedIn"
+            aria-label="Follow SS4 on Instagram"
           >
             <div className="relative w-5 h-5">
               <Image
-                src="/images/asset-13.webp"
-                alt="LinkedIn"
+                src="/images/social-icons/instagram.svg"
+                alt="Instagram"
+                fill
+                className="object-contain"
+              />
+            </div>
+          </Link>
+
+          {/* TikTok */}
+          <Link
+            href="https://tiktok.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:scale-110 transition-transform p-1"
+            aria-label="Follow SS4 on TikTok"
+          >
+            <div className="relative w-5 h-5">
+              <Image
+                src="/images/social-icons/tiktok.svg"
+                alt="TikTok"
+                fill
+                className="object-contain"
+              />
+            </div>
+          </Link>
+
+          {/* Facebook */}
+          <Link
+            href="https://facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:scale-110 transition-transform p-1"
+            aria-label="Follow SS4 on Facebook"
+          >
+            <div className="relative w-5 h-5">
+              <Image
+                src="/images/social-icons/facebook.svg"
+                alt="Facebook"
                 fill
                 className="object-contain"
               />
@@ -68,17 +87,36 @@ export function SocialFollowStrip() {
 
           {/* YouTube */}
           <Link
-            href="https://www.youtube.com/user/Microsoft"
+            href="https://youtube.com"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:scale-110 transition-transform p-1"
-            aria-label="Follow Microsoft on YouTube"
+            aria-label="Follow SS4 on YouTube"
           >
-            <svg width="22" height="22" viewBox="0 0 32 32" fill="#FF0000">
-              <circle cx="16" cy="16" r="16" />
-              <path d="M13 11.5L21 16L13 20.5V11.5Z" fill="white" />
-            </svg>
+            <div className="relative w-5 h-5">
+              <Image
+                src="/images/social-icons/youtube.svg"
+                alt="YouTube"
+                fill
+                className="object-contain"
+              />
+            </div>
           </Link>
+        </div>
+
+        {/* Community Mobile App CTA badge */}
+        <div className="hidden sm:flex items-center gap-3 bg-white border border-[#EAEAEA] rounded-full px-5 py-2 shadow-xs">
+          <span className="font-space text-xs font-bold text-[#64748B] uppercase tracking-wider">
+            SS4 Mobile
+          </span>
+          <div className="relative w-28 h-7">
+            <Image
+              src="/images/app-cta/Get_it_on_Google_play.png"
+              alt="Get it on Google Play"
+              fill
+              className="object-contain"
+            />
+          </div>
         </div>
       </div>
     </section>

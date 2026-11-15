@@ -4,78 +4,79 @@ import { GlobeIcon, PrivacyChoicesIcon } from "./icons";
 
 const FOOTER_SECTIONS = [
   {
-    title: "What's new",
+    title: "Secondary Schools",
     links: [
-      { label: "Microsoft 365", href: "#" },
-      { label: "Games", href: "#" },
-      { label: "Surface Pro", href: "#" },
-      { label: "Surface Laptop", href: "#" },
-      { label: "Microsoft Copilot", href: "#" },
-      { label: "Windows 11 apps", href: "#" },
+      { label: "Lagos State Directory", href: "#schools" },
+      { label: "Abuja FCT Schools", href: "#schools" },
+      { label: "Rivers State Directory", href: "#schools" },
+      { label: "Kaduna State Schools", href: "#schools" },
+      { label: "Ogun State Schools", href: "#schools" },
+      { label: "Browse 36 States + FCT", href: "#schools" },
     ],
   },
   {
-    title: "Microsoft Store",
+    title: "Tertiary Institutions",
     links: [
-      { label: "Account profile", href: "#" },
-      { label: "Download Center", href: "#" },
-      { label: "Microsoft Store Support", href: "#" },
-      { label: "Returns", href: "#" },
-      { label: "Order tracking", href: "#" },
+      { label: "Federal Universities", href: "#colleges" },
+      { label: "State Universities", href: "#colleges" },
+      { label: "Private Universities", href: "#colleges" },
+      { label: "Polytechnics & Institutes", href: "#colleges" },
+      { label: "Colleges of Education", href: "#colleges" },
+      { label: "Department Rosters", href: "#colleges" },
     ],
   },
   {
-    title: "Education",
+    title: "Direct Admissions",
     links: [
-      { label: "Microsoft in education", href: "#" },
-      { label: "Devices for education", href: "#" },
-      { label: "Microsoft Teams for Education", href: "#" },
-      { label: "Microsoft 365 Education", href: "#" },
-      { label: "Office Education", href: "#" },
-      { label: "Educator training", href: "#" },
+      { label: "How Direct Admissions Works", href: "#admissions" },
+      { label: "Zero Application Fee Guide", href: "#admissions" },
+      { label: "Cutoff Guidance & Criteria", href: "#admissions" },
+      { label: "Partner University Offers", href: "#admissions" },
+      { label: "Student Verification", href: "#admissions" },
+      { label: "Direct Entry Pathways", href: "#admissions" },
     ],
   },
   {
-    title: "Business",
+    title: "Institutional Partners",
     links: [
-      { label: "Microsoft Cloud", href: "#" },
-      { label: "Microsoft Security", href: "#" },
-      { label: "Azure", href: "#" },
-      { label: "Dynamics 365", href: "#" },
-      { label: "Microsoft 365 for business", href: "#" },
-      { label: "Copilot for Work", href: "#" },
+      { label: "Register School (SS4-PRT)", href: "#partners" },
+      { label: "Google Sheet Sync Guide", href: "#partners" },
+      { label: "Campus Profile Management", href: "#partners" },
+      { label: "Department Bios & Anthems", href: "#partners" },
+      { label: "Administrator Guidelines", href: "#partners" },
+      { label: "Partner Support Desk", href: "#partners" },
     ],
   },
   {
-    title: "Developer & IT",
+    title: "Academic Search",
     links: [
-      { label: "Microsoft Developer", href: "#" },
-      { label: "Documentation", href: "#" },
-      { label: "Microsoft Learn", href: "#" },
-      { label: "Microsoft Tech Community", href: "#" },
-      { label: "Azure Marketplace", href: "#" },
-      { label: "Visual Studio 2026", href: "#" },
+      { label: "Filter by State & Location", href: "#search" },
+      { label: "Compare School Benchmarks", href: "#search" },
+      { label: "Student & Parent Reviews", href: "#search" },
+      { label: "Academic Shortlist", href: "#search" },
+      { label: "Verified Student Stories", href: "#search" },
+      { label: "National Academic Index", href: "#search" },
     ],
   },
   {
-    title: "Company",
+    title: "About SS4",
     links: [
-      { label: "Careers", href: "#" },
-      { label: "About Microsoft", href: "#" },
-      { label: "Company news", href: "#" },
-      { label: "Privacy at Microsoft", href: "#" },
-      { label: "Investors", href: "#" },
-      { label: "Sustainability", href: "#" },
+      { label: "About the Ecosystem", href: "#about" },
+      { label: "Many Institutions, One Space", href: "#about" },
+      { label: "Trust & Verification", href: "#about" },
+      { label: "Platform Announcements", href: "#about" },
+      { label: "Contact SS4 Team", href: "#about" },
+      { label: "Privacy & Data Policy", href: "#about" },
     ],
   },
 ];
 
 const LEGAL_LINKS = [
-  { label: "Contact Microsoft", href: "#" },
-  { label: "Privacy", href: "#" },
-  { label: "Terms of use", href: "#" },
-  { label: "Trademarks", href: "#" },
-  { label: "About our ads", href: "#" },
+  { label: "Contact SS4", href: "#" },
+  { label: "Privacy Policy", href: "#" },
+  { label: "Terms of Use", href: "#" },
+  { label: "Institutional Verification", href: "#" },
+  { label: "Data Integrity", href: "#" },
 ];
 
 export function Footer() {
@@ -116,7 +117,7 @@ export function Footer() {
               className="flex items-center gap-2 hover:text-[#1A56C4] transition-colors"
             >
               <GlobeIcon className="w-4 h-4 text-[#1A56C4]" />
-              <span className="font-semibold">English (United States)</span>
+              <span className="font-semibold">Nigeria (English)</span>
             </Link>
 
             <Link
@@ -124,11 +125,11 @@ export function Footer() {
               className="flex items-center gap-1.5 hover:text-[#1A56C4] transition-colors"
             >
               <PrivacyChoicesIcon className="w-6 h-3" />
-              <span>Your Privacy Choices</span>
+              <span>Institutional Verification Protocol</span>
             </Link>
 
             <Link href="#" className="hover:text-[#1A56C4] transition-colors">
-              Consumer Health Privacy
+              Student Privacy &amp; Records Safety
             </Link>
           </div>
 
@@ -143,7 +144,9 @@ export function Footer() {
                 {link.label}
               </Link>
             ))}
-            <span className="font-space font-bold text-[#111111]">© Microsoft 2026 (SS4 Redesign)</span>
+            <span className="font-space font-bold text-[#111111]">
+              © 2026 SS4 — An Ecosystem for Academia. All rights reserved.
+            </span>
           </div>
 
         </div>

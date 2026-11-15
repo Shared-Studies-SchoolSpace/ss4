@@ -1,19 +1,31 @@
 import React from "react";
+import Image from "next/image";
 
-export function MicrosoftLogo({ className = "h-5 w-auto" }: { className?: string }) {
+export function SS4Logo({ className = "h-8 w-auto" }: { className?: string }) {
   return (
-    <div className={`flex items-center gap-2 select-none ${className}`}>
-      <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="1" y="1" width="10" height="10" fill="#F25022" />
-        <rect x="12" y="1" width="10" height="10" fill="#7FBA00" />
-        <rect x="1" y="12" width="10" height="10" fill="#00A4EF" />
-        <rect x="12" y="12" width="10" height="10" fill="#FFB900" />
-      </svg>
-      <span className="text-[18px] font-semibold tracking-tight text-[#737373] hidden sm:inline-block font-sans">
-        Microsoft
-      </span>
+    <div className={`flex items-center gap-2.5 select-none ${className}`}>
+      <div className="relative w-8 h-8 rounded-lg overflow-hidden border border-[#1A56C4]/20 shadow-xs">
+        <Image
+          src="/images/ss4_logo_without_text.jpg"
+          alt="SS4 Logo"
+          fill
+          className="object-cover"
+        />
+      </div>
+      <div className="flex flex-col">
+        <span className="font-space font-black text-[20px] tracking-tight text-[#111111] leading-none">
+          SS<span className="text-[#1A56C4]">4</span>
+        </span>
+        <span className="font-space text-[9px] font-bold text-[#64748B] tracking-wider uppercase leading-tight">
+          Ecosystem for Academia
+        </span>
+      </div>
     </div>
   );
+}
+
+export function MicrosoftLogo({ className = "h-5 w-auto" }: { className?: string }) {
+  return <SS4Logo className={className} />;
 }
 
 export function WindowsIcon({ className = "w-10 h-10" }: { className?: string }) {

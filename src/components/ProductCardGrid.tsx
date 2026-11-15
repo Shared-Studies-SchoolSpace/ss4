@@ -16,64 +16,64 @@ interface CardItem {
 
 const CARDS: CardItem[] = [
   {
-    id: "card-1",
-    category: "OS & GAMING",
-    title: "Designed for life today – and tomorrow",
+    id: "card-schools",
+    category: "SECONDARY DIRECTORY",
+    title: "Nigeria Schools Across 36 States + FCT",
     description:
-      "The next generation of games. Your goals. Friends and family. Windows 11 was made to bring you closer to everything you love.",
-    ctaText: "Check PC compatibility",
-    ctaHref: "#",
-    imageSrc: "/images/asset-3.webp",
-    imageAlt: "Windows 11 on a modern laptop device",
+      "Explore thousands of verified secondary and K-12 schools from Lagos to Abuja with transparent location, type, and community verification.",
+    ctaText: "Browse Secondary Schools",
+    ctaHref: "#schools",
+    imageSrc: "/images/start-student-with-dog.webp",
+    imageAlt: "Student exploring Nigerian secondary schools on SS4",
   },
   {
-    id: "card-2",
-    category: "BROWSER & PRIVACY",
-    title: "Microsoft Edge",
+    id: "card-tertiary",
+    category: "TERTIARY INSTITUTIONS",
+    title: "Premier Federal & Private Universities",
     description:
-      "World-class performance with more privacy, more productivity and more value built right into your daily browsing experience.",
-    ctaText: "Download Edge",
-    ctaHref: "#",
-    imageSrc: "/images/asset-5.webp",
-    imageAlt: "A landscape with the Microsoft Edge logo hovering over water",
+      "Discover top Nigerian universities including UNIUYO, Covenant, and UNN with verified department profiles, anthems, and academic missions.",
+    ctaText: "Explore Universities",
+    ctaHref: "#colleges",
+    imageSrc: "/images/clay-1.webp",
+    imageAlt: "Student exploring Nigerian universities on SS4",
   },
   {
-    id: "card-3",
-    category: "CLOUD STORAGE",
-    title: "Microsoft OneDrive",
+    id: "card-tools",
+    category: "SEARCH & COMPARISON",
+    title: "Tools to Organize Your School Search",
     description:
-      "Safely backup and secure your essential files, documents and photos to OneDrive with seamless access across all your devices.",
-    ctaText: "Explore OneDrive",
-    ctaHref: "#",
-    imageSrc: "/images/asset-6.webp",
-    imageAlt: "A user accessing cloud storage via OneDrive",
+      "We give you all the data to filter by state, curriculum, and size so you can build your personal academic shortlist with total confidence.",
+    ctaText: "Start Exploring",
+    ctaHref: "#search-tools",
+    imageSrc: "/images/abby-1.webp",
+    imageAlt: "Student using SS4 academic comparison and search tools",
   },
   {
-    id: "card-4",
-    category: "DESKTOP AMBIENCE",
-    title: "Organise with Bing Wallpaper",
+    id: "card-stories",
+    category: "STUDENT EXPERIENCES",
+    title: "Real Academic Stories & Guidance",
     description:
-      "Explore the world one breathtaking photograph at a time with automatically updating high-definition imagery on your desktop.",
-    ctaText: "Install wallpaper app",
-    ctaHref: "#",
-    imageSrc: "/images/asset-4.webp",
-    imageAlt: "A laptop displaying a colourful seascape from Bing Wallpaper",
+      "Hear from students and families navigating school choices. Get honest perspectives to find the academic environment where you will thrive.",
+    ctaText: "Read Student Stories",
+    ctaHref: "#stories",
+    imageSrc: "/images/dayna-1.webp",
+    imageAlt: "Parent and student sharing their academic journey on SS4",
   },
 ];
 
 export function ProductCardGrid() {
   return (
-    <section className="w-full py-8 sm:py-12" aria-label="Featured consumer products">
+    <section id="schools" className="w-full py-8 sm:py-12" aria-label="Featured academic discovery">
       <div className="mx-auto max-w-[1600px] px-4 sm:px-8 lg:px-12">
         
         {/* Section Header */}
         <div className="flex items-center justify-between mb-8">
           <div>
             <div className="varsity-badge-primary mb-2">
-              <span>CONSUMER ECOSYSTEM</span>
+              <span>ACADEMIC DISCOVERY</span>
             </div>
             <h2 className="font-space text-[26px] sm:text-[34px] font-black tracking-tight text-[#111111]">
-              Engineered for Everyday Excellence
+              Find the School That Fits You Best
             </h2>
           </div>
         </div>

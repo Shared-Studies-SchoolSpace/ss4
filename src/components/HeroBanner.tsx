@@ -21,29 +21,29 @@ interface HeroSlideData {
 const SLIDES: HeroSlideData[] = [
   {
     id: 1,
-    badge: "MICROSOFT 365 SUITE",
-    title: "Maximise the everyday with Microsoft 365",
+    badge: "ACADEMIC ECOSYSTEM",
+    title: "SS4: An Ecosystem for Academia",
     description:
-      "Get online protection, secure cloud storage and innovative apps designed to fit your needs – all in one unified subscription.",
-    primaryCtaText: "For 1 person",
-    primaryCtaHref: "#",
-    secondaryCtaText: "For up to 6 people",
-    secondaryCtaHref: "#",
-    imageSrc: "/images/asset-2.webp",
-    imageAlt: "Microsoft 365 apps including Copilot, Word, Excel, PowerPoint, Outlook, and OneDrive",
+      "Many Institutions, One Space. Connecting Nigerian secondary schools, colleges, direct admissions, and student communities across all 36 states and the FCT.",
+    primaryCtaText: "Explore Schools Directory",
+    primaryCtaHref: "#schools",
+    secondaryCtaText: "Direct Admissions",
+    secondaryCtaHref: "#admissions",
+    imageSrc: "/images/hero-lg.webp",
+    imageAlt: "Students exploring secondary and tertiary institutions on SS4",
   },
   {
     id: 2,
-    badge: "SURFACE PRO • 11TH EDITION",
-    title: "Meet the most flexible Copilot+ PC",
+    badge: "DIRECT ADMISSIONS",
+    title: "Get Accepted Without an Application",
     description:
-      "Unlock unmatched speed and AI-powered experiences with revolutionary versatility and all-day battery life for peak performance.",
-    primaryCtaText: "Shop Surface Pro",
-    primaryCtaHref: "#",
-    secondaryCtaText: "Explore tech specs",
-    secondaryCtaHref: "#",
-    imageSrc: "/images/asset-3.webp",
-    imageAlt: "Surface Pro laptop device",
+      "No application fee. Fast-track your tertiary entry with verified academic records, transparent cutoff guidance, and direct pathways to accredited partner universities.",
+    primaryCtaText: "Apply for Direct Admissions",
+    primaryCtaHref: "#admissions",
+    secondaryCtaText: "View Partner Universities",
+    secondaryCtaHref: "#colleges",
+    imageSrc: "/images/direct-admissions-logo.webp",
+    imageAlt: "SS4 Direct Admissions gateway and partner tertiary institutions",
   },
 ];
 
@@ -76,7 +76,6 @@ export function HeroBanner() {
             <div className="w-full lg:w-1/2 max-w-[560px] z-10 space-y-5">
               {slide.badge && (
                 <div className="varsity-badge-accent">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#B84D00] animate-pulse" />
                   <span>{slide.badge}</span>
                 </div>
               )}

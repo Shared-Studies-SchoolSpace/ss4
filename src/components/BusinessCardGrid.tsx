@@ -16,64 +16,64 @@ interface BusinessCard {
 
 const BUSINESS_CARDS: BusinessCard[] = [
   {
-    id: "biz-1",
-    category: "ENTERPRISE AI",
-    title: "Microsoft 365 Copilot",
+    id: "biz-partner",
+    category: "PARTNER ONBOARDING",
+    title: "Official Institutional Registration",
     description:
-      "Save time and focus on the things that matter most with enterprise-grade AI integrated directly into your workplace tools.",
-    ctaText: "Discover Copilot",
-    ctaHref: "#",
+      "Register your secondary or tertiary institution with an official SS4 partner code (SS4-PRT) synchronized directly via Google Sheets.",
+    ctaText: "Register Your School",
+    ctaHref: "#partners",
     imageSrc: "/images/asset-8.webp",
-    imageAlt: "A copilot interface stating how can I help you",
+    imageAlt: "School administrator onboarding an institution on SS4",
   },
   {
-    id: "biz-2",
-    category: "DEVELOPER SUITE",
-    title: "Visual Studio 2026",
+    id: "biz-directory",
+    category: "DIRECTORY MANAGEMENT",
+    title: "Verified Campus Profiles & Anthems",
     description:
-      "Get the most comprehensive IDE for .NET and C++ developers on Windows for building across web, cloud, desktop, and mobile.",
-    ctaText: "Download Visual Studio",
-    ctaHref: "#",
-    imageSrc: "/images/asset-9.webp",
-    imageAlt: "A close-up of a Visual Studio coding environment",
-  },
-  {
-    id: "biz-3",
-    category: "COLLABORATION HUB",
-    title: "Get Microsoft Teams for business",
-    description:
-      "Online meetings, team chat, real-time channels collaboration, and shared cloud storage – all in one unified workspace.",
-    ctaText: "Find business plans",
-    ctaHref: "#",
+      "Maintain official school bios, faculties, departments, and admissions criteria directly accessible to thousands of prospective students.",
+    ctaText: "Manage School Profile",
+    ctaHref: "#partners",
     imageSrc: "/images/asset-10.webp",
-    imageAlt: "A Microsoft Teams commercial collaboration meeting",
+    imageAlt: "Educators managing campus directories and departmental profiles",
   },
   {
-    id: "biz-4",
-    category: "CLOUD COMPUTING",
-    title: "Welcome to Windows 365 Cloud PC",
+    id: "biz-intake",
+    category: "ADMISSIONS GATEWAY",
+    title: "Direct Enrollment & Cutoff Benchmark",
     description:
-      "Securely stream your complete, personalised Windows experience from the Microsoft Cloud to any device, anywhere.",
-    ctaText: "Deploy Cloud PC",
-    ctaHref: "#",
+      "Set minimum academic cutoffs, review qualified applicants without paper bottlenecks, and connect with motivated students across Nigeria.",
+    ctaText: "Explore Admissions Portal",
+    ctaHref: "#admissions",
     imageSrc: "/images/asset-11.webp",
-    imageAlt: "A woman accessing Windows 365 Cloud services on her device",
+    imageAlt: "Academic administrator reviewing student admissions cutoffs",
+  },
+  {
+    id: "biz-states",
+    category: "36 STATES NETWORK",
+    title: "Nationwide Educational Visibility",
+    description:
+      "Expand your institution's presence across all 36 states and the Federal Capital Territory with indexed, searchable scholastic records.",
+    ctaText: "View State Coverage",
+    ctaHref: "#states",
+    imageSrc: "/images/asset-9.webp",
+    imageAlt: "Interactive map and analytics of academic institutions across Nigeria",
   },
 ];
 
 export function BusinessCardGrid() {
   return (
-    <section className="w-full py-8 sm:py-12" aria-label="For business">
+    <section id="partners" className="w-full py-8 sm:py-12" aria-label="For institutional partners and educators">
       <div className="mx-auto max-w-[1600px] px-4 sm:px-8 lg:px-12">
         
         {/* Section Header */}
         <div className="flex items-center justify-between mb-8">
           <div>
             <div className="varsity-badge-accent mb-2">
-              <span>COMMERCIAL DIVISION</span>
+              <span>INSTITUTIONAL NETWORK</span>
             </div>
             <h2 className="font-space text-[26px] sm:text-[34px] font-black tracking-tight text-[#111111]">
-              For Business &amp; Enterprise
+              For Schools, Colleges &amp; Educators
             </h2>
           </div>
         </div>
