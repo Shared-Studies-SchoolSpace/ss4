@@ -1,0 +1,198 @@
+{
+  "title": "Microsoft – AI, Cloud, Productivity, Gaming & Apps",
+  "metaTags": {
+    "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+    "content-page-ref": "QyejA8RNdXaoycf3MlFmXXYaqUzUQcDZH1FIhpYT4OWDmbrfNVwyEb2m69tIB_7V1MTx1Kor7L9Z_r_OXJWRXA",
+    "robots": "index, follow",
+    "template": "reimagine-consumer-global-homepage-template",
+    "awa-canvasType": "web",
+    "awa-isTented": "false",
+    "awa-pgtmp": "reimagine-consumer-global-homepage-template",
+    "awa-pageType": "MSCOM Home Page",
+    "awa-market": "en-ng",
+    "awa-cms": "AEM",
+    "description": "Explore Microsoft products and services and support for your home or business. Shop Microsoft 365, Copilot, Teams, Windows, Azure and more.",
+    "twitter:url": "https://www.microsoft.com/en-ng",
+    "twitter:title": "Microsoft – AI, Cloud, Productivity, Gaming & Apps",
+    "twitter:description": "Explore Microsoft products and services and support for your home or business. Shop Microsoft 365, Copilot, Teams, Windows, Azure and more.",
+    "twitter:card": "summary",
+    "og:url": "https://www.microsoft.com/en-ng",
+    "og:title": "Microsoft – AI, Cloud, Productivity, Gaming & Apps",
+    "og:description": "Explore Microsoft products and services and support for your home or business. Shop Microsoft 365, Copilot, Teams, Windows, Azure and more.",
+    "og:type": "website",
+    "awa-pageId": "188402b886996d08e7be7297c7ee1b64",
+    "thirdparty-config": "v84",
+    "format-detection": "telephone=no",
+    "cas-exp-visitor": "/echo/etc.clientlibs/microsoft/components/structure/page/clientlibs/visitor.ACSHASHb62afce26e7190363962d16ddaa42321.min.js",
+    "cas-exp-at": "/echo/etc.clientlibs/microsoft/components/structure/page/clientlibs/experimentation.ACSHASH312c76058a871d54d367898c995c2fd5.min.js",
+    "awa-program": "echo",
+    "awa-enabledFeatures": "DisableBasePageQsp;ccs_test;StoreInternalSSR;LocaleDetection;QspEnabled;ccs_CcsAmaIntegration;contentbackfillgenerate;esiproductcards;feature-controlled-mwf;uhf-ms-io-endpoint;uhf-esi-cv;uhf-esi-cache;contentsquare;mediapixel;holiday-themer;lazyload-static-components;clientlibDefer;upsellEnabled;contentbackfillpkgdelete;healthcheck;contentbackfillhttpgenerate;perf-tracker-1ds;dynamic-bundle;cvIncrementer;tentingEnabled;chatCookiesImplemented;alertCountDownWithoutServerTime;pdpDynamicRendering;bundlesDynamicRendering;contentbackfillmetadatachangesvideo;contentbackfillmetadatachangesnonvideo;listDynamicRendering;experimentation-without-personalization;generic-list-importer;combinedUHF;cvCallEnabled;m365ProductCatalog;support-unsupported-locales;vsbEnabled;deferClickTale;videoLazyLoad;prefetchFontsEnabled;enable-code-isolation;imageLinkTag;fetchPriority;contentIngestionAgent;enableClickgroupTelemetry;imageLazyLoad;contentIngestionAgent-dispatcher2westus2Agent;isCacheControlFeatureEnabled;feature-controlled-content-card;lcpPrioritizationPhase1;ocReimagineTelemetry;deferScriptsEnabled;lcpPrioritizationPhase2;ocReimagineSlotNumberTelemetry;contentIngestionAgent-dispatcher1westus2Agent;ocReimagineComponentNameTelemetry;ocReimagineTemplateNameTelemetry;ptePhase1;extended-html-minification-sites;dynamicPrice;gl-auto-config;displayV35Toggle;chatCustomEndpoint;enableBoostPersonalization;ocReimagineTelemetryTemplateNameSwap;enableEmailConnector;enable-eventingService;ocReimagineAIAssistant;acsPMEFeatureEnabled;ocReimagineCustomerApiUrl;ocReimagineCustomerFilterApiUrl;email-FigmaEmailAutomation;storeVideoUmp;ocProductPricePrimaryLocale;complianceManagerEnabled;entertainmentEW;enableClarityScript;EnableCascadeAuthSDK;ecsMigrationCheck;vsbSearchEnabled;EnableHreflang",
+    "last-modified": "Wed, 11 Nov 2026 14:14:15 GMT"
+  },
+  "favicons": [
+    {
+      "rel": "icon",
+      "href": "https://www.microsoft.com/favicon.ico?v2",
+      "sizes": ""
+    }
+  ],
+  "fonts": [
+    "sans-serif",
+    "\"Segoe UI Variable Text\", \"Segoe UI\", segoeui, \"Helvetica Neue\", helvetica, arial, sans-serif",
+    "\"Segoe UI\", SegoeUI, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "FabricMDL2Icons",
+    "\"Segoe UI Variable Display\", \"Segoe UI\", segoeui, \"Helvetica Neue\", helvetica, arial, sans-serif"
+  ],
+  "colors": [
+    "rgb(0, 0, 0)",
+    "rgb(0, 103, 184)",
+    "rgb(38, 38, 38)",
+    "rgb(255, 255, 255)",
+    "rgb(14, 23, 38)",
+    "rgb(23, 37, 61)",
+    "rgb(42, 68, 111)",
+    "rgb(65, 50, 40)",
+    "rgb(0, 66, 117)",
+    "rgb(97, 97, 97)"
+  ],
+  "backgroundColors": [
+    "rgb(255, 255, 255)",
+    "rgb(242, 242, 242)",
+    "rgb(230, 230, 230)",
+    "rgb(0, 103, 184)",
+    "rgb(0, 120, 212)",
+    "rgb(220, 238, 248)"
+  ],
+  "images": [
+    {
+      "src": "https://uhf.microsoft.com/images/microsoft/RE1Mu3b.png",
+      "alt": "Microsoft",
+      "width": 216,
+      "height": 46,
+      "className": ""
+    },
+    {
+      "src": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Hero-Mobile-M365-Icon-Bounce-Premium-Left?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=1600&hei=900&qlt=90&fit=constrain",
+      "alt": "Various apps that are part of a Microsoft 365 subscription, such as: Microsoft Copilot, Word, Excel, PowerPoint, Outlook, OneNote, OneDrive, Microsoft Defender and Microsoft Teams.",
+      "width": 2160,
+      "height": 1215,
+      "className": "   "
+    },
+    {
+      "src": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/gldn-CP-Windows11-GlobalLaunch?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=800&hei=450&qlt=85&fit=constrain",
+      "alt": "Windows 11 on a laptop.",
+      "width": 799,
+      "height": 450,
+      "className": "   "
+    },
+    {
+      "src": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Bing-Wallpaper-Giants-Causeway?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=800&hei=450&qlt=85&fit=constrain",
+      "alt": "A laptop displaying a colourful seascape from Bing Wallpaper.",
+      "width": 799,
+      "height": 450,
+      "className": "   "
+    },
+    {
+      "src": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/gldn-MSFT-CP-Edge?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=800&hei=450&qlt=85&fit=constrain",
+      "alt": "A landscape with the Microsoft Edge logo hovering over water.",
+      "width": 799,
+      "height": 450,
+      "className": "   "
+    },
+    {
+      "src": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/gldn-Soft-CP-OneDriveCampaignRefresh-2?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=800&hei=450&qlt=85&fit=constrain",
+      "alt": "A woman using a Windows 10 laptop with OneDrive",
+      "width": 740,
+      "height": 417,
+      "className": "   "
+    },
+    {
+      "src": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Card-Horizontal-PC-SMB-OneNote?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=3840&hei=2160&qlt=95&fit=constrain",
+      "alt": "OneNote on a tablet screen",
+      "width": 2880,
+      "height": 2160,
+      "className": "   "
+    },
+    {
+      "src": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Microsoft-365-Copilot-COMMR-0625?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=800&hei=450&qlt=85&fit=constrain",
+      "alt": "A copilot interface says, \"Hi, how can I help you?\"",
+      "width": 799,
+      "height": 450,
+      "className": "   "
+    },
+    {
+      "src": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Visual-Studio-2026-Screen-Closeup?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=800&hei=450&qlt=85&fit=constrain",
+      "alt": "A close-up of a Visual Studio screen.",
+      "width": 800,
+      "height": 450,
+      "className": "   "
+    },
+    {
+      "src": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Microsoft-Teams-Commercial-Meeting?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=800&hei=450&qlt=85&fit=constrain",
+      "alt": "A Microsoft Teams video call.",
+      "width": 799,
+      "height": 450,
+      "className": "   "
+    },
+    {
+      "src": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/JIC-DPS-CP01?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=800&hei=450&qlt=85&fit=constrain",
+      "alt": "A woman at home accessing Windows 365 Cloud services",
+      "width": 799,
+      "height": 450,
+      "className": "   "
+    },
+    {
+      "src": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/mcaps-X-black?resMode=sharp2&op_usm=1.5,0.65,15,0&qlt=85",
+      "alt": "X",
+      "width": 32,
+      "height": 32,
+      "className": "   "
+    },
+    {
+      "src": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/linkedin-2?resMode=sharp2&op_usm=1.5,0.65,15,0&qlt=85",
+      "alt": "LinkedIn",
+      "width": 32,
+      "height": 32,
+      "className": "   "
+    }
+  ],
+  "sections": [
+    {
+      "name": "Header / Navigation",
+      "tag": "header",
+      "id": "",
+      "className": "uhf-header uhf-breakpoint--desktop uhf-theme--light",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 54
+      }
+    },
+    {
+      "name": "Section: Go further with Copilot",
+      "tag": "div",
+      "id": "",
+      "className": "aem-Grid aem-Grid--12 aem-Grid--default--12 ",
+      "rect": {
+        "x": 0,
+        "y": 56,
+        "width": 1440,
+        "height": 2487.75
+      },
+      "heading": "Go further with Copilot"
+    },
+    {
+      "name": "Footer",
+      "tag": "footer",
+      "id": "uhf-footer",
+      "className": "uhf-footer c-uhff uhf-theme--light",
+      "rect": {
+        "x": 0,
+        "y": 2591.75,
+        "width": 1440,
+        "height": 415
+      }
+    }
+  ]
+}
