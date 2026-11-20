@@ -1,246 +1,162 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import {
-  SS4Logo,
-  SearchIcon,
-  CartIcon,
-  UserIcon,
-  ChevronDownIcon,
-} from "./icons";
+  Trophy,
+  School,
+  Menu,
+  X,
+  User,
+} from "lucide-react";
+import { SS4Logo } from "./icons";
 
 const NAV_LINKS = [
-  { label: "K-12 Schools", href: "#schools" },
-  { label: "Colleges & Universities", href: "#colleges" },
-  { label: "Direct Admissions", href: "#admissions" },
-  { label: "State Directories", href: "#states" },
-  { label: "Institutional Partners", href: "#partners" },
-  { label: "About SS4", href: "#about" },
-];
-
-const ALL_ACADEMIC_CATEGORIES = [
-  {
-    category: "Secondary Schools",
-    items: [
-      "Lagos State Schools",
-      "Abuja FCT Directory",
-      "Rivers State Schools",
-      "Kaduna State Schools",
-      "Ogun State Schools",
-      "Browse All 36 States",
-    ],
-  },
-  {
-    category: "Tertiary Institutions",
-    items: [
-      "Federal Universities",
-      "State Universities",
-      "Private Universities",
-      "Polytechnics & Monotechnics",
-      "Colleges of Education",
-    ],
-  },
-  {
-    category: "Direct Admissions",
-    items: [
-      "Direct Entry Pathways",
-      "Partner University Cutoffs",
-      "Admissions Verification",
-      "Zero Application Fee Guide",
-      "Eligibility Check",
-    ],
-  },
-  {
-    category: "Institutional Partners",
-    items: [
-      "Register School (SS4-PRT)",
-      "Google Sheet Verification",
-      "Campus Directory Sync",
-      "Institutional Administrator Portal",
-      "Partnership Guidelines",
-    ],
-  },
-  {
-    category: "Student Tools",
-    items: [
-      "Academic Shortlist",
-      "Institution Comparisons",
-      "Verified Student Stories",
-      "Cutoff Benchmarks",
-      "FAQ & Student Support",
-    ],
-  },
+  { id: "scl", label: "SCL", href: "https://scl.ssfour.org", icon: Trophy },
+  { id: "lyceon", label: "Lyceon", href: "https://slm.ssfour.org", icon: School },
 ];
 
 export function HeaderNav() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [allMsOpen, setAllMsOpen] = useState(false);
-  const [searchOpen, setSearchOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState("");
+  const [activeTab, setActiveTab] = useState("scl");
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 40);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-[#FFFFFF]/90 backdrop-blur-md border-b border-[#EAEAEA] transition-all">
-      <div className="mx-auto flex h-[64px] max-w-[1600px] items-center justify-between px-4 sm:px-8 lg:px-12 text-[14px] text-[#111111]">
-        
-        {/* Left: Mobile Toggle & Logo */}
-        <div className="flex items-center gap-4 lg:gap-8">
-          {/* Mobile hamburger button */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 text-[#111111] hover:bg-[#F0EEEA] rounded-xl transition-colors"
-            aria-label="Toggle navigation menu"
+    <>
+      {/* Floating Centered Morphing Navbar adapted from SAS to SS4 */}
+      <nav
+        className="fixed top-3 sm:top-4 left-1/2 -translate-x-1/2 z-[150] w-full px-3 sm:px-4 flex flex-col items-center pointer-events-none"
+        aria-label="Main Navigation"
+      >
+        <div
+          className={`flex items-center justify-between w-full max-w-[calc(100vw-1.5rem)] pointer-events-auto gap-4 backdrop-blur-md border transition-all duration-300 ease-out ${
+            isScrolled
+              ? "lg:max-w-[500px] rounded-full bg-white/96 border-[#1A56C4]/25 shadow-[0_16px_36px_-12px_rgba(26,86,196,0.15)] px-4 py-2 translate-y-1.5"
+              : "lg:max-w-[720px] rounded-[24px] bg-white/92 border-[#CCCCCC]/80 shadow-[0_8px_24px_-10px_rgba(0,0,0,0.08)] px-5 py-3 translate-y-0"
+          }`}
+        >
+          {/* Brand Logo */}
+          <Link
+            href="/"
+            onClick={() => {
+              setMenuOpen(false);
+              setActiveTab("scl");
+            }}
+            className="flex items-center shrink-0 outline-none focus-visible:ring-2 focus-visible:ring-[#1A56C4] rounded-lg"
           >
-            <svg width="22" height="22" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2.2">
-              {mobileMenuOpen ? (
-                <path d="M4 4L16 16M4 16L16 4" strokeLinecap="round" />
-              ) : (
-                <path d="M3 5H17M3 10H17M3 15H17" strokeLinecap="round" />
-              )}
-            </svg>
-          </button>
-
-          {/* SS4 Brand Logo with Varsity styling */}
-          <Link href="/" className="flex items-center outline-none focus-visible:ring-2 focus-visible:ring-[#1A56C4] rounded-lg">
             <SS4Logo />
           </Link>
 
-          {/* Desktop Primary Nav */}
-          <nav className="hidden lg:flex items-center space-x-1" aria-label="Main Navigation">
-            {NAV_LINKS.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                className="px-3.5 py-2 text-[14px] font-semibold text-[#111111] hover:text-[#1A56C4] hover:bg-[#1A56C4]/5 rounded-xl transition-all"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-        </div>
+          {/* Desktop Nav Links: Inline Pill Segmented Row (Displayed in Full View) */}
+          {!isScrolled && (
+            <div className="hidden lg:flex items-center gap-1 px-2 py-1 bg-[#F0EEEA] border border-[#CCCCCC] rounded-full shrink-0">
+              {NAV_LINKS.map((link) => {
+                const isActive = activeTab === link.id;
+                const Icon = link.icon;
 
-        {/* Right Actions: All Institutions, Search, Shortlist, Sign In */}
-        <div className="flex items-center gap-2 sm:gap-3">
-          
-          {/* All Institutions Mega-menu trigger */}
-          <div className="relative hidden xl:block">
-            <button
-              onClick={() => {
-                setAllMsOpen(!allMsOpen);
-                setSearchOpen(false);
-              }}
-              className="flex items-center gap-2 px-3.5 py-2 text-[14px] font-semibold text-[#111111] hover:text-[#1A56C4] hover:bg-[#1A56C4]/5 rounded-xl transition-all focus:outline-none"
-            >
-              <span>All Institutions</span>
-              <ChevronDownIcon className={`w-3 h-3 text-[#1A56C4] transition-transform duration-200 ${allMsOpen ? "rotate-180" : ""}`} />
-            </button>
-
-            {/* SS4 Varsity Mega Menu Dropdown */}
-            {allMsOpen && (
-              <div className="absolute right-0 top-[60px] w-[960px] bg-white border border-[#EAEAEA] rounded-[24px] shadow-[0_12px_36px_rgba(0,0,0,0.08)] p-8 grid grid-cols-5 gap-6 z-50 text-[13px]">
-                {ALL_ACADEMIC_CATEGORIES.map((cat) => (
-                  <div key={cat.category} className="space-y-3">
-                    <h4 className="font-space font-bold text-[13px] text-[#111111] uppercase tracking-wider pb-1 border-b border-[#F0EEEA]">
-                      {cat.category}
-                    </h4>
-                    <ul className="space-y-2 text-[#64748B]">
-                      {cat.items.map((item) => (
-                        <li key={item}>
-                          <Link href="#" className="hover:text-[#1A56C4] hover:font-semibold transition-colors block py-0.5">
-                            {item}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-                <div className="col-span-5 border-t border-[#EAEAEA] pt-4 mt-2 flex items-center justify-between">
-                  <span className="text-xs text-[#64748B]">SS4 Academic Ecosystem Directory</span>
-                  <Link href="#states" className="text-[13px] font-space font-bold text-[#1A56C4] hover:text-[#B84D00] hover:underline flex items-center gap-1">
-                    BROWSE 36 STATES DIRECTORY &gt;
-                  </Link>
-                </div>
-              </div>
-            )}
-          </div>
-
-          {/* Search Toggle / Varsity Outlined Input */}
-          <div className="relative">
-            {searchOpen ? (
-              <div className="flex items-center bg-white border-2 border-[#1A56C4] rounded-[16px] px-3 py-1 shadow-sm">
-                <input
-                  type="text"
-                  placeholder="Search schools, universities, cutoffs..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  autoFocus
-                  className="w-48 sm:w-64 text-[13px] outline-none text-[#111111] font-avenir"
-                />
-                <button
-                  onClick={() => setSearchOpen(false)}
-                  className="text-neutral-400 hover:text-black ml-2 text-xs font-bold"
-                  aria-label="Close search"
-                >
-                  ✕
-                </button>
-              </div>
-            ) : (
-              <button
-                onClick={() => {
-                  setSearchOpen(true);
-                  setAllMsOpen(false);
-                }}
-                className="flex items-center gap-1.5 px-3 py-2 text-[14px] font-semibold text-[#111111] hover:text-[#1A56C4] hover:bg-[#1A56C4]/5 rounded-xl transition-all"
-                aria-label="Search schools and universities"
-              >
-                <span className="hidden sm:inline">Search</span>
-                <SearchIcon className="w-4 h-4 text-[#111111]" />
-              </button>
-            )}
-          </div>
-
-          {/* Shortlist Icon */}
-          <Link
-            href="#"
-            className="flex items-center gap-1.5 px-3 py-2 text-[14px] font-semibold text-[#111111] hover:text-[#1A56C4] hover:bg-[#1A56C4]/5 rounded-xl transition-all"
-            aria-label="0 saved institutions in shortlist"
-          >
-            <span className="hidden sm:inline">Shortlist</span>
-            <CartIcon className="w-4 h-4 text-[#111111]" />
-          </Link>
-
-          {/* Sign In CTA - SS4 Outlined Pill */}
-          <Link
-            href="#login"
-            className="flex items-center gap-1.5 px-4 py-2 border border-[#CCCCCC] hover:border-[#1A56C4] hover:text-[#1A56C4] bg-white rounded-full text-[13px] font-bold text-[#111111] transition-all shadow-xs"
-            aria-label="Sign in to your account"
-          >
-            <UserIcon className="w-4 h-4 text-[#1A56C4]" />
-            <span className="hidden sm:inline">Sign in</span>
-          </Link>
-        </div>
-      </div>
-
-      {/* Mobile Drawer */}
-      {mobileMenuOpen && (
-        <div className="lg:hidden border-t border-[#EAEAEA] bg-white px-6 py-6 space-y-4 shadow-lg animate-slide-in">
-          <nav className="flex flex-col space-y-3">
-            {NAV_LINKS.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="py-2.5 text-[15px] font-semibold text-[#111111] border-b border-[#F0EEEA] hover:text-[#1A56C4] transition-colors"
-              >
-                {link.label}
-              </Link>
-            ))}
-            <div className="pt-2 font-space font-bold text-[14px] text-[#1A56C4]">
-              ALL INSTITUTIONS
+                return (
+                  <a
+                    key={link.id}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setActiveTab(link.id)}
+                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-black uppercase tracking-wide transition-all duration-200 whitespace-nowrap ${
+                      isActive
+                        ? "bg-[#1A56C4] text-white shadow-sm"
+                        : "text-gray-600 hover:text-[#111111] hover:bg-white/70"
+                    }`}
+                  >
+                    <Icon
+                      size={13}
+                      className={isActive ? "text-white" : "text-gray-500"}
+                    />
+                    <span>{link.label}</span>
+                  </a>
+                );
+              })}
             </div>
-          </nav>
+          )}
+
+          {/* Right Controls */}
+          <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+            <Link
+              href="#about"
+              className="hidden sm:inline-flex items-center px-3.5 py-2 rounded-full border border-[#B84D00] text-[#B84D00] text-xs font-black uppercase tracking-wider hover:bg-[#B84D00]/5 transition-colors whitespace-nowrap"
+            >
+              Partner With Us
+            </Link>
+
+            <Link
+              href="#login"
+              className="flex items-center gap-1.5 px-3.5 sm:px-4 py-2 rounded-full bg-[#1A56C4] hover:bg-[#1545A2] text-white text-xs font-black uppercase tracking-wider shadow-md hover:scale-105 active:scale-95 transition-all whitespace-nowrap"
+            >
+              <User className="w-3.5 h-3.5" />
+              <span>Sign in</span>
+            </Link>
+
+            <button
+              onClick={() => setMenuOpen((v) => !v)}
+              className="lg:hidden p-2 rounded-full hover:bg-gray-100 text-[#111111] transition-colors cursor-pointer"
+              aria-label="Toggle menu"
+            >
+              {menuOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
+          </div>
         </div>
-      )}
-    </header>
+
+        {/* Mobile Expandable Dropdown Menu */}
+        {menuOpen && (
+          <div className="lg:hidden mt-2 w-full max-w-[calc(100vw-1.5rem)] sm:max-w-md bg-white/95 backdrop-blur-md rounded-2xl p-3 shadow-xl border border-gray-200 pointer-events-auto">
+            {NAV_LINKS.map((link) => {
+              const isActive = activeTab === link.id;
+              const Icon = link.icon;
+
+              return (
+                <a
+                  key={link.id}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => {
+                    setActiveTab(link.id);
+                    setMenuOpen(false);
+                  }}
+                  className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl text-xs font-black uppercase tracking-wider transition-all mb-1 ${
+                    isActive
+                      ? "bg-[#1A56C4] text-white"
+                      : "text-gray-700 hover:text-[#111111] hover:bg-gray-100"
+                  }`}
+                >
+                  <Icon size={16} />
+                  <span>{link.label}</span>
+                </a>
+              );
+            })}
+
+            <div className="pt-2 mt-1 border-t border-gray-200">
+              <Link
+                href="#about"
+                onClick={() => setMenuOpen(false)}
+                className="block w-full text-left px-4 py-2.5 text-xs font-bold text-[#B84D00] hover:text-[#1A56C4] uppercase"
+              >
+                Partner With Us
+              </Link>
+            </div>
+          </div>
+        )}
+      </nav>
+
+      {/* Top spacing placeholder so page content isn't covered by fixed floating navbar */}
+      <div className="h-20 sm:h-24" />
+    </>
   );
 }

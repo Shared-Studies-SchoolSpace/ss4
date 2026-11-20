@@ -21,29 +21,29 @@ interface HeroSlideData {
 const SLIDES: HeroSlideData[] = [
   {
     id: 1,
-    badge: "ACADEMIC ECOSYSTEM",
-    title: "SS4: An Ecosystem for Academia",
+    badge: "AN ECOSYSTEM FOR ACADEMIA",
+    title: "Many Institutions, One Space",
     description:
-      "Many Institutions, One Space. Connecting Nigerian secondary schools, colleges, direct admissions, and student communities across all 36 states and the FCT.",
-    primaryCtaText: "Explore Schools Directory",
-    primaryCtaHref: "#schools",
-    secondaryCtaText: "Direct Admissions",
-    secondaryCtaHref: "#admissions",
-    imageSrc: "/images/hero-lg.webp",
-    imageAlt: "Students exploring secondary and tertiary institutions on SS4",
+      "Student players in school uniforms compete across wooden boards in the SS4 Chess League arena.",
+    primaryCtaText: "Enter theBOARDGAMES",
+    primaryCtaHref: "#league-feed",
+    secondaryCtaText: "About SS4",
+    secondaryCtaHref: "#about",
+    imageSrc: "/images/scholastic_chess_hero.jpg",
+    imageAlt: "Students in school uniforms playing chess at wooden tables in the SS4 arena",
   },
   {
     id: 2,
-    badge: "DIRECT ADMISSIONS",
-    title: "Get Accepted Without an Application",
+    badge: "TERTIARY INSTITUTIONS",
+    title: "Connected University Communities",
     description:
-      "No application fee. Fast-track your tertiary entry with verified academic records, transparent cutoff guidance, and direct pathways to accredited partner universities.",
-    primaryCtaText: "Apply for Direct Admissions",
-    primaryCtaHref: "#admissions",
-    secondaryCtaText: "View Partner Universities",
-    secondaryCtaHref: "#colleges",
-    imageSrc: "/images/direct-admissions-logo.webp",
-    imageAlt: "SS4 Direct Admissions gateway and partner tertiary institutions",
+      "History, Science, Literature, and Mathematics textbooks sit beside a notebook and globe, spotlighting the university communities connected on SS4.",
+    primaryCtaText: "Browse Campus Feed",
+    primaryCtaHref: "#league-feed",
+    secondaryCtaText: "Partner With Us",
+    secondaryCtaHref: "#partners",
+    imageSrc: "/images/tester.webp",
+    imageAlt: "History, Science, Literature, and Mathematics textbooks beside a notebook and globe on a desk",
   },
 ];
 
@@ -126,13 +126,7 @@ export function HeroBanner() {
           </div>
 
           {/* Carousel Controls in SS4 Segmented Capsule */}
-          <div className="bg-[#FAF8F4] border-t border-[#EAEAEA] px-6 sm:px-12 py-3 flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <span className="font-space text-xs font-bold text-[#64748B] tracking-wider uppercase">
-                FEATURED HIGHLIGHT 0{currentSlide + 1} / 0{SLIDES.length}
-              </span>
-            </div>
-
+          <div className="bg-[#FAF8F4] border-t border-[#EAEAEA] px-6 sm:px-12 py-3 flex items-center justify-end">
             <div className="flex items-center gap-3">
               {/* Pause/Play Toggle */}
               <button

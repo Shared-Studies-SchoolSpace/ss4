@@ -16,70 +16,59 @@ interface BusinessCard {
 
 const BUSINESS_CARDS: BusinessCard[] = [
   {
-    id: "biz-partner",
-    category: "PARTNER ONBOARDING",
-    title: "Official Institutional Registration",
+    id: "biz-quarterfinals",
+    category: "AUGUST QUARTERFINALS",
+    title: "August 2026 Quarterfinals",
     description:
-      "Register your secondary or tertiary institution with an official SS4 partner code (SS4-PRT) synchronized directly via Google Sheets.",
-    ctaText: "Register Your School",
-    ctaHref: "#partners",
-    imageSrc: "/images/asset-8.webp",
-    imageAlt: "School administrator onboarding an institution on SS4",
+      "Eight contenders from FUTIA, UNIUYO, UNILORIN, Landmark, Babcock, Covenant, UNICAL, and Bells Tech meet across four boards on Wednesday, September 2nd at 8 PM.",
+    ctaText: "See Quarterfinal Matchups",
+    ctaHref: "#league-feed",
+    imageSrc: "/images/august-tournament-quarterfinals.jpg",
+    imageAlt: "SS4 Chess League August 2026 Quarterfinals matchup poster",
   },
   {
-    id: "biz-directory",
-    category: "DIRECTORY MANAGEMENT",
-    title: "Verified Campus Profiles & Anthems",
+    id: "biz-semifinals",
+    category: "AUGUST SEMIFINALS",
+    title: "August 2026 Semifinals",
     description:
-      "Maintain official school bios, faculties, departments, and admissions criteria directly accessible to thousands of prospective students.",
-    ctaText: "Manage School Profile",
-    ctaHref: "#partners",
-    imageSrc: "/images/asset-10.webp",
-    imageAlt: "Educators managing campus directories and departmental profiles",
+      "Emmanuel Michael (FUTIA) plays Kenneth Gilbert (UNILORIN) while James Henshaw (Bells Tech) faces Anuchi Emmanuel (Covenant) on Thursday, September 3rd at 8 PM.",
+    ctaText: "See Semifinal Pairings",
+    ctaHref: "#league-feed",
+    imageSrc: "/images/august-tournament-semifinals.png",
+    imageAlt: "SS4 Chess League August 2026 Semifinals matchup poster",
   },
   {
-    id: "biz-intake",
-    category: "ADMISSIONS GATEWAY",
-    title: "Direct Enrollment & Cutoff Benchmark",
+    id: "biz-champion",
+    category: "AUGUST CHAMPION",
+    title: "Anuchi Emmanuel Wins August 2026",
     description:
-      "Set minimum academic cutoffs, review qualified applicants without paper bottlenecks, and connect with motivated students across Nigeria.",
-    ctaText: "Explore Admissions Portal",
-    ctaHref: "#admissions",
-    imageSrc: "/images/asset-11.webp",
-    imageAlt: "Academic administrator reviewing student admissions cutoffs",
-  },
-  {
-    id: "biz-states",
-    category: "36 STATES NETWORK",
-    title: "Nationwide Educational Visibility",
-    description:
-      "Expand your institution's presence across all 36 states and the Federal Capital Territory with indexed, searchable scholastic records.",
-    ctaText: "View State Coverage",
-    ctaHref: "#states",
-    imageSrc: "/images/asset-9.webp",
-    imageAlt: "Interactive map and analytics of academic institutions across Nigeria",
+      "Covenant University Electrical Engineering student Anuchi Emmanuel (@Robobobobobobob_Emma) won the SS4 Chess League August 2026 championship trophy.",
+    ctaText: "Meet the August Champion",
+    ctaHref: "#league-feed",
+    imageSrc: "/images/august-tournament-champion.png",
+    imageAlt: "SS4 Chess League August 2026 Champion poster for Anuchi Emmanuel",
   },
 ];
 
 export function BusinessCardGrid() {
   return (
-    <section id="partners" className="w-full py-8 sm:py-12" aria-label="For institutional partners and educators">
+    <section id="august-recap" className="w-full py-8 sm:py-12" aria-label="SS4 Chess League August 2026 tournament dispatches">
       <div className="mx-auto max-w-[1600px] px-4 sm:px-8 lg:px-12">
         
         {/* Section Header */}
         <div className="flex items-center justify-between mb-8">
           <div>
             <div className="varsity-badge-accent mb-2">
-              <span>INSTITUTIONAL NETWORK</span>
+              <span>TOURNAMENT DISPATCHES</span>
             </div>
             <h2 className="font-space text-[26px] sm:text-[34px] font-black tracking-tight text-[#111111]">
-              For Schools, Colleges &amp; Educators
+              August 2026 Tournament Feed
             </h2>
           </div>
         </div>
 
-        {/* 4-Card Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* 3-Card Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {BUSINESS_CARDS.map((card) => (
             <div
               key={card.id}

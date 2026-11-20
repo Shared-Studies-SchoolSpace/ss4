@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "SS4 — An Ecosystem for Academia | Many Institutions, One Space",
-  description: "SS4: An Ecosystem for Academia. Many Institutions, One Space. Connecting secondary schools, colleges, direct admissions, and student communities across Nigeria.",
+  description: "SS4: An Ecosystem for Academia. Many Institutions, One Space. Connecting schools, tertiary institutions, departments, and students into one shared space.",
   icons: {
     icon: "/images/ss4_logo.jpg",
   },

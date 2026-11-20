@@ -16,64 +16,64 @@ interface CardItem {
 
 const CARDS: CardItem[] = [
   {
-    id: "card-schools",
-    category: "SECONDARY DIRECTORY",
-    title: "Nigeria Schools Across 36 States + FCT",
+    id: "card-varsity-nov",
+    category: "VARSITY SEASON 2",
+    title: "Varsity Tournament Nov. '26",
     description:
-      "Explore thousands of verified secondary and K-12 schools from Lagos to Abuja with transparent location, type, and community verification.",
-    ctaText: "Browse Secondary Schools",
-    ctaHref: "#schools",
-    imageSrc: "/images/start-student-with-dog.webp",
-    imageAlt: "Student exploring Nigerian secondary schools on SS4",
+      "Fifteen top Nigerian university teams of five compete on Lichess from November 18th to 30th in Season 2 of the SS4 Chess League Varsity Tournament.",
+    ctaText: "Follow Varsity Season 2",
+    ctaHref: "#august-recap",
+    imageSrc: "/images/varsity-nov-2026-poster.png",
+    imageAlt: "SS4 Chess League Varsity Tournament November 2026 Season 2 poster",
   },
   {
-    id: "card-tertiary",
-    category: "TERTIARY INSTITUTIONS",
-    title: "Premier Federal & Private Universities",
+    id: "card-october-boardgames",
+    category: "THEBOARDGAMES",
+    title: "October 2026 Championship",
     description:
-      "Discover top Nigerian universities including UNIUYO, Covenant, and UNN with verified department profiles, anthems, and academic missions.",
-    ctaText: "Explore Universities",
-    ctaHref: "#colleges",
-    imageSrc: "/images/clay-1.webp",
-    imageAlt: "Student exploring Nigerian universities on SS4",
+      "Nigeria's top university chess players clash on Lichess from October 9th to 31st, 2026 across 3+0, 5+0, and 10+0 time controls.",
+    ctaText: "Explore theBOARDGAMES",
+    ctaHref: "#august-recap",
+    imageSrc: "/images/october-tournament-poster.png",
+    imageAlt: "SS4 Chess League theBOARDGAMES October 2026 tournament poster",
   },
   {
-    id: "card-tools",
-    category: "SEARCH & COMPARISON",
-    title: "Tools to Organize Your School Search",
+    id: "card-ss4-space",
+    category: "SHARED STUDY SCHOOL SPACE",
+    title: "SS4 — Shared Study School Space",
     description:
-      "We give you all the data to filter by state, curriculum, and size so you can build your personal academic shortlist with total confidence.",
-    ctaText: "Start Exploring",
-    ctaHref: "#search-tools",
-    imageSrc: "/images/abby-1.webp",
-    imageAlt: "Student using SS4 academic comparison and search tools",
+      "SS4 (Shared Study School Space) connects Nigerian universities, departments, and student chess communities into one shared arena.",
+    ctaText: "Read the SS4 Story",
+    ctaHref: "#about",
+    imageSrc: "/images/varsity-lineups-poster.jpg",
+    imageAlt: "SS4 Shared Study School Space logo banner",
   },
   {
-    id: "card-stories",
-    category: "STUDENT EXPERIENCES",
-    title: "Real Academic Stories & Guidance",
+    id: "card-varsity-sept",
+    category: "VARSITY SEPT. '26",
+    title: "Varsity Tournament Sept. '26",
     description:
-      "Hear from students and families navigating school choices. Get honest perspectives to find the academic environment where you will thrive.",
-    ctaText: "Read Student Stories",
-    ctaHref: "#stories",
-    imageSrc: "/images/dayna-1.webp",
-    imageAlt: "Parent and student sharing their academic journey on SS4",
+      "University squads of five compete on Chess.com and Lichess from September 16th to 30th, 2026 for five 1-month Chess.com Premium memberships.",
+    ctaText: "See Sept. '26 Squads",
+    ctaHref: "#august-recap",
+    imageSrc: "/images/varsity-tournament-poster.jpeg",
+    imageAlt: "SS4 Chess League Varsity Tournament September 2026 poster",
   },
 ];
 
 export function ProductCardGrid() {
   return (
-    <section id="schools" className="w-full py-8 sm:py-12" aria-label="Featured academic discovery">
+    <section id="league-feed" className="w-full py-8 sm:py-12" aria-label="League and community feed">
       <div className="mx-auto max-w-[1600px] px-4 sm:px-8 lg:px-12">
         
         {/* Section Header */}
         <div className="flex items-center justify-between mb-8">
           <div>
             <div className="varsity-badge-primary mb-2">
-              <span>ACADEMIC DISCOVERY</span>
+              <span>SS4 FEED</span>
             </div>
             <h2 className="font-space text-[26px] sm:text-[34px] font-black tracking-tight text-[#111111]">
-              Find the School That Fits You Best
+              League &amp; Community Feed
             </h2>
           </div>
         </div>
