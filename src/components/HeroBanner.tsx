@@ -2,12 +2,10 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { ChevronRightIcon } from "./icons";
 
 interface HeroSlideData {
   id: number;
-  badge?: string;
   title: string;
   description: string;
   primaryCtaText: string;
@@ -21,29 +19,27 @@ interface HeroSlideData {
 const SLIDES: HeroSlideData[] = [
   {
     id: 1,
-    badge: "AN ECOSYSTEM FOR ACADEMIA",
     title: "Many Institutions, One Space",
     description:
-      "Student players in school uniforms compete across wooden boards in the SS4 Chess League arena.",
+      "Connecting Nigerian tertiary institutions, departments, and collegiate chess players in one shared arena.",
     primaryCtaText: "Enter theBOARDGAMES",
-    primaryCtaHref: "#league-feed",
+    primaryCtaHref: "https://scl.ssfour.org/theboardgames",
     secondaryCtaText: "About SS4",
-    secondaryCtaHref: "#about",
+    secondaryCtaHref: "https://scl.ssfour.org/about",
     imageSrc: "/images/scholastic_chess_hero.jpg",
-    imageAlt: "Students in school uniforms playing chess at wooden tables in the SS4 arena",
+    imageAlt: "Students competing in the SS4 Chess League",
   },
   {
     id: 2,
-    badge: "TERTIARY INSTITUTIONS",
     title: "Connected University Communities",
     description:
-      "History, Science, Literature, and Mathematics textbooks sit beside a notebook and globe, spotlighting the university communities connected on SS4.",
-    primaryCtaText: "Browse Campus Feed",
-    primaryCtaHref: "#league-feed",
+      "Discover participating Nigerian universities, departmental talent, and inter-school competition across the network.",
+    primaryCtaText: "Explore Universities",
+    primaryCtaHref: "https://scl.ssfour.org/tertiary",
     secondaryCtaText: "Partner With Us",
-    secondaryCtaHref: "#partners",
+    secondaryCtaHref: "https://scl.ssfour.org/partners",
     imageSrc: "/images/tester.webp",
-    imageAlt: "History, Science, Literature, and Mathematics textbooks beside a notebook and globe on a desk",
+    imageAlt: "Textbooks, study notebook, and globe on a classroom desk",
   },
 ];
 
@@ -64,22 +60,9 @@ export function HeroBanner() {
   return (
     <section className="relative w-full py-6 sm:py-8" aria-label="Hero Carousel">
       <div className="mx-auto max-w-[1600px] px-4 sm:px-8 lg:px-12">
-        {/* Main Hero Card Container in SS4 Varsity Card style */}
-        <div className="relative w-full bg-white border border-[#EAEAEA] rounded-[28px] sm:rounded-[32px] overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.03)] transition-all">
-          
-          {/* Subtle Varsity accent gradient header strip */}
-          <div className="h-1.5 w-full bg-gradient-to-r from-[#1A56C4] via-[#0D9488] to-[#B84D00]" />
-
+        <div className="relative w-full bg-white rounded-[28px] sm:rounded-[32px] overflow-hidden shadow-[0_4px_24px_rgba(17,17,17,0.05)]">
           <div className="min-h-[480px] lg:min-h-[520px] flex flex-col-reverse lg:flex-row items-center justify-between p-6 sm:p-12 lg:p-16 gap-8">
-            
-            {/* Content Box */}
             <div className="w-full lg:w-1/2 max-w-[560px] z-10 space-y-5">
-              {slide.badge && (
-                <div className="varsity-badge-accent">
-                  <span>{slide.badge}</span>
-                </div>
-              )}
-
               <h1 className="font-space text-[32px] sm:text-[42px] lg:text-[48px] font-black tracking-tight text-[#111111] leading-[1.08]">
                 {slide.title}
               </h1>
@@ -88,30 +71,32 @@ export function HeroBanner() {
                 {slide.description}
               </p>
 
-              {/* Action Buttons translated to SS4 equivalents */}
               <div className="flex flex-wrap items-center gap-3 pt-3">
-                <Link
+                <a
                   href={slide.primaryCtaHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="varsity-btn-primary"
                 >
                   <span>{slide.primaryCtaText}</span>
                   <ChevronRightIcon className="w-4 h-4" />
-                </Link>
+                </a>
 
-                {slide.secondaryCtaText && (
-                  <Link
-                    href={slide.secondaryCtaHref || "#"}
+                {slide.secondaryCtaText && slide.secondaryCtaHref && (
+                  <a
+                    href={slide.secondaryCtaHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="varsity-btn-secondary"
                   >
                     <span>{slide.secondaryCtaText}</span>
-                  </Link>
+                  </a>
                 )}
               </div>
             </div>
 
-            {/* Hero Image in elevated container */}
             <div className="w-full lg:w-1/2 flex items-center justify-center p-2 sm:p-6">
-              <div className="relative w-full aspect-[16/9] max-w-[660px]">
+              <div className="relative w-full aspect-[16/9] max-w-[660px] rounded-2xl overflow-hidden">
                 <Image
                   src={slide.imageSrc}
                   alt={slide.imageAlt}
@@ -122,17 +107,14 @@ export function HeroBanner() {
                 />
               </div>
             </div>
-
           </div>
 
-          {/* Carousel Controls in SS4 Segmented Capsule */}
-          <div className="bg-[#FAF8F4] border-t border-[#EAEAEA] px-6 sm:px-12 py-3 flex items-center justify-end">
+          <div className="bg-[#FAF8F4] px-6 sm:px-12 py-3 flex items-center justify-end">
             <div className="flex items-center gap-3">
-              {/* Pause/Play Toggle */}
               <button
                 onClick={() => setIsPlaying(!isPlaying)}
                 aria-label={isPlaying ? "Pause carousel" : "Play carousel"}
-                className="p-2 text-[#111111] hover:bg-[#EAEAEA] rounded-full transition-colors"
+                className="p-2 text-[#111111] hover:bg-[#EAEAEA] rounded-full transition-colors cursor-pointer"
               >
                 {isPlaying ? (
                   <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
@@ -146,10 +128,9 @@ export function HeroBanner() {
                 )}
               </button>
 
-              {/* Prev */}
               <button
                 onClick={() => setCurrentSlide((prev) => (prev === 0 ? SLIDES.length - 1 : prev - 1))}
-                className="p-2 text-[#111111] hover:bg-[#EAEAEA] rounded-full transition-colors"
+                className="p-2 text-[#111111] hover:bg-[#EAEAEA] rounded-full transition-colors cursor-pointer"
                 aria-label="Previous slide"
               >
                 <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
@@ -157,24 +138,22 @@ export function HeroBanner() {
                 </svg>
               </button>
 
-              {/* Indicators: Varsity Pill style */}
               <div className="flex items-center gap-1.5">
                 {SLIDES.map((s, idx) => (
                   <button
                     key={s.id}
                     onClick={() => setCurrentSlide(idx)}
                     aria-label={`Slide ${idx + 1}`}
-                    className={`h-2.5 rounded-full transition-all duration-300 ${
+                    className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
                       currentSlide === idx ? "w-7 bg-[#1A56C4]" : "w-2.5 bg-[#CCCCCC] hover:bg-[#999999]"
                     }`}
                   />
                 ))}
               </div>
 
-              {/* Next */}
               <button
                 onClick={() => setCurrentSlide((prev) => (prev + 1) % SLIDES.length)}
-                className="p-2 text-[#111111] hover:bg-[#EAEAEA] rounded-full transition-colors"
+                className="p-2 text-[#111111] hover:bg-[#EAEAEA] rounded-full transition-colors cursor-pointer"
                 aria-label="Next slide"
               >
                 <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
@@ -183,7 +162,6 @@ export function HeroBanner() {
               </button>
             </div>
           </div>
-
         </div>
       </div>
     </section>
