@@ -2,11 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "SS4 — An Ecosystem for Academia | Many Institutions, One Space",
-  description: "SS4: An Ecosystem for Academia. Many Institutions, One Space. Connecting schools, tertiary institutions, departments, and students into one shared space.",
-  icons: {
-    icon: "/images/ss4_logo.jpg",
-  },
+  title: "SS4 — An Ecosystem for Academia | LYCEON, SCL & HanziNA",
+  description:
+    "SS4 connects schools, tertiary institutions, and contenders across one shared academic ecosystem: LYCEON (uniting SAS and SLM), SS4 Chess League (SCL), and HanziNA.",
 };
 
 export default function RootLayout({

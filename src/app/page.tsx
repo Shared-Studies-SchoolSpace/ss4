@@ -1,32 +1,43 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import { HeaderNav } from "@/components/HeaderNav";
 import { HeroBanner } from "@/components/HeroBanner";
 import { QuickLinks } from "@/components/QuickLinks";
 import { ProductCardGrid } from "@/components/ProductCardGrid";
 import { MidPromoBanner } from "@/components/MidPromoBanner";
+import { EcosystemShowcase } from "@/components/EcosystemShowcase";
 import { BusinessCardGrid } from "@/components/BusinessCardGrid";
-import { LyceonAnnouncements } from "@/components/LyceonAnnouncements";
 import { SocialFollowStrip } from "@/components/SocialFollowStrip";
 import { BackToTop } from "@/components/BackToTop";
 import { Footer } from "@/components/Footer";
+import { EcosystemComponentId } from "@/data/ecosystem";
 
 export default function Home() {
+  const [selectedComponent, setSelectedComponent] = useState<EcosystemComponentId>("lyceon");
+
   return (
     <div className="min-h-screen flex flex-col bg-[#F6F4F0]">
-      <HeaderNav />
+      <HeaderNav
+        activeComponent={selectedComponent}
+        onSelectComponent={setSelectedComponent}
+      />
 
-      <main className="flex-1 w-full overflow-x-hidden">
+      <main className="flex-1 w-full overflow-x-clip">
         <HeroBanner />
-        <QuickLinks />
-        <ProductCardGrid />
+        <QuickLinks onSelectComponent={setSelectedComponent} />
+        <ProductCardGrid onSelectComponent={setSelectedComponent} />
         <MidPromoBanner />
+        <EcosystemShowcase
+          activeId={selectedComponent}
+          onSelect={setSelectedComponent}
+        />
         <BusinessCardGrid />
-        <LyceonAnnouncements />
         <SocialFollowStrip />
       </main>
 
       <BackToTop />
-      <Footer />
+      <Footer onSelectComponent={setSelectedComponent} />
     </div>
   );
 }

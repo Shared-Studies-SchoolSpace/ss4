@@ -1,165 +1,161 @@
-"use client";
-
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Image from "next/image";
 import { ChevronRightIcon } from "./icons";
 
-interface HeroSlideData {
-  id: number;
-  title: string;
-  description: string;
-  primaryCtaText: string;
-  primaryCtaHref: string;
-  secondaryCtaText?: string;
-  secondaryCtaHref?: string;
-  imageSrc: string;
-  imageAlt: string;
-}
-
-const SLIDES: HeroSlideData[] = [
-  {
-    id: 1,
-    title: "Many Institutions, One Space",
-    description:
-      "Connecting Nigerian tertiary institutions, departments, and collegiate chess players in one shared arena.",
-    primaryCtaText: "Enter theBOARDGAMES",
-    primaryCtaHref: "https://scl.ssfour.org/theboardgames",
-    secondaryCtaText: "About SS4",
-    secondaryCtaHref: "https://scl.ssfour.org/about",
-    imageSrc: "/images/scholastic_chess_hero.jpg",
-    imageAlt: "Students competing in the SS4 Chess League",
-  },
-  {
-    id: 2,
-    title: "Connected University Communities",
-    description:
-      "Discover participating Nigerian universities, departmental talent, and inter-school competition across the network.",
-    primaryCtaText: "Explore Universities",
-    primaryCtaHref: "https://scl.ssfour.org/tertiary",
-    secondaryCtaText: "Partner With Us",
-    secondaryCtaHref: "https://scl.ssfour.org/partners",
-    imageSrc: "/images/tester.webp",
-    imageAlt: "Textbooks, study notebook, and globe on a classroom desk",
-  },
-];
-
 export function HeroBanner() {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(true);
-
-  useEffect(() => {
-    if (!isPlaying) return;
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % SLIDES.length);
-    }, 6000);
-    return () => clearInterval(timer);
-  }, [isPlaying]);
-
-  const slide = SLIDES[currentSlide];
-
   return (
-    <section className="relative w-full py-6 sm:py-8" aria-label="Hero Carousel">
+    <section
+      className="relative w-full py-5 sm:py-8"
+      aria-label="Main Feature: LYCEON"
+    >
       <div className="mx-auto max-w-[1600px] px-4 sm:px-8 lg:px-12">
-        <div className="relative w-full bg-white rounded-[28px] sm:rounded-[32px] overflow-hidden shadow-[0_4px_24px_rgba(17,17,17,0.05)]">
-          <div className="min-h-[480px] lg:min-h-[520px] flex flex-col-reverse lg:flex-row items-center justify-between p-6 sm:p-12 lg:p-16 gap-8">
-            <div className="w-full lg:w-1/2 max-w-[560px] z-10 space-y-5">
-              <h1 className="font-space text-[32px] sm:text-[42px] lg:text-[48px] font-black tracking-tight text-[#111111] leading-[1.08]">
-                {slide.title}
+        <div className="relative w-full rounded-[24px] sm:rounded-[32px] overflow-clip bg-[linear-gradient(135deg,#EDF3FC_0%,#FFFFFF_52%,#FFF4EA_100%)] shadow-[0_8px_32px_rgba(17,17,17,0.06),0_0_0_1px_rgba(17,17,17,0.04)]">
+          <div className="min-h-[460px] lg:min-h-[520px] flex flex-col-reverse lg:flex-row items-center justify-between p-6 sm:p-10 lg:p-14 xl:p-16 gap-8 lg:gap-12">
+            {/* Left Copy Column (Bottom on mobile) */}
+            <div className="w-full lg:w-[48%] max-w-[560px] z-10 space-y-5">
+              <div className="flex flex-wrap items-center gap-3">
+                <Image
+                  src="/images/lyceon-wordmark.svg"
+                  alt="LYCEON"
+                  width={132}
+                  height={26}
+                  priority
+                  className="h-[26px] w-auto object-contain"
+                />
+                <span className="font-space text-[12px] font-bold uppercase tracking-[0.08em] text-[#B84D00]">
+                  SAS + SLM · One Platform
+                </span>
+              </div>
+
+              <h1 className="font-space text-[34px] sm:text-[44px] lg:text-[52px] font-black tracking-tight text-[#111111] leading-[1.06]">
+                Learn it. Then prove it.
               </h1>
 
-              <p className="font-avenir text-[16px] sm:text-[17px] text-[#444444] leading-relaxed">
-                {slide.description}
+              <p className="font-avenir text-[16px] sm:text-[17px] text-[#3B3F46] leading-relaxed">
+                LYCEON unites the SS4 Assessment Series (SAS) and the SS4 Language Model (SLM) in
+                one arena—combining spaced-repetition language mastery with WAEC/JAMB sciences and
+                tech certifications through live server-authoritative 1v1 duels.
               </p>
 
-              <div className="flex flex-wrap items-center gap-3 pt-3">
+              <div className="flex flex-wrap items-center gap-3 pt-2">
                 <a
-                  href={slide.primaryCtaHref}
+                  href="https://lyceon.ssfour.org"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="varsity-btn-primary"
+                  className="varsity-btn-primary px-6 py-3 text-[15px] min-h-[48px]"
                 >
-                  <span>{slide.primaryCtaText}</span>
+                  <span>Explore LYCEON</span>
                   <ChevronRightIcon className="w-4 h-4" />
                 </a>
 
-                {slide.secondaryCtaText && slide.secondaryCtaHref && (
-                  <a
-                    href={slide.secondaryCtaHref}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="varsity-btn-secondary"
-                  >
-                    <span>{slide.secondaryCtaText}</span>
-                  </a>
-                )}
+                <a
+                  href="#ecosystem-cards"
+                  className="varsity-btn-secondary px-5 py-3 text-[15px] min-h-[48px]"
+                >
+                  <span>Explore the Ecosystem</span>
+                </a>
               </div>
             </div>
 
-            <div className="w-full lg:w-1/2 flex items-center justify-center p-2 sm:p-6">
-              <div className="relative w-full aspect-[16/9] max-w-[660px] rounded-2xl overflow-hidden">
-                <Image
-                  src={slide.imageSrc}
-                  alt={slide.imageAlt}
-                  fill
-                  priority
-                  className="object-contain"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-              </div>
-            </div>
-          </div>
+            {/* Right Visual Showcase (Top on mobile) */}
+            <div className="w-full lg:w-[52%] flex items-center justify-center">
+              <div className="relative w-full max-w-[580px] py-6 px-4 sm:aspect-[16/11] sm:p-7 rounded-[20px] sm:rounded-[24px] bg-[radial-gradient(circle_at_35%_30%,rgba(26,86,196,0.14),transparent_55%),radial-gradient(circle_at_75%_75%,rgba(243,112,33,0.16),transparent_55%),linear-gradient(145deg,#F7FAFF_0%,#FFFFFF_55%,#FFF8F2_100%)] flex items-center justify-center shadow-[inset_0_0_0_1px_rgba(17,17,17,0.05)]">
+                {/* Floating Ecosystem Tiles illustrating Languages + Sciences/Assessments inside LYCEON */}
+                <div
+                  aria-hidden="true"
+                  className="hidden sm:flex items-center gap-2.5 absolute top-4 left-4 bg-white/95 rounded-2xl px-3.5 py-2.5 shadow-[0_8px_24px_rgba(17,17,17,0.08)]"
+                >
+                  <span className="w-8 h-8 rounded-xl bg-[#FFF2E6] text-[#B84D00] font-hanzi font-black text-base flex items-center justify-center">
+                    汉
+                  </span>
+                  <div className="leading-tight">
+                    <div className="font-space text-[12px] font-bold text-[#111111]">6 Languages</div>
+                    <div className="text-[11px] text-[#64748B]">HSK · JLPT · Yorùbá</div>
+                  </div>
+                </div>
 
-          <div className="bg-[#FAF8F4] px-6 sm:px-12 py-3 flex items-center justify-end">
-            <div className="flex items-center gap-3">
-              <button
-                onClick={() => setIsPlaying(!isPlaying)}
-                aria-label={isPlaying ? "Pause carousel" : "Play carousel"}
-                className="p-2 text-[#111111] hover:bg-[#EAEAEA] rounded-full transition-colors cursor-pointer"
-              >
-                {isPlaying ? (
-                  <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
-                    <rect x="3" y="2" width="3.5" height="12" rx="1" />
-                    <rect x="9.5" y="2" width="3.5" height="12" rx="1" />
-                  </svg>
-                ) : (
-                  <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
-                    <path d="M4 2.5L13.5 8L4 13.5V2.5Z" />
-                  </svg>
-                )}
-              </button>
+                <div
+                  aria-hidden="true"
+                  className="hidden sm:flex items-center gap-2.5 absolute top-5 right-4 bg-white/95 rounded-2xl px-3.5 py-2.5 shadow-[0_8px_24px_rgba(17,17,17,0.08)]"
+                >
+                  <span className="w-8 h-8 rounded-xl bg-[#E8EFFF] text-[#1A56C4] font-space font-black text-xs flex items-center justify-center">
+                    E=mc²
+                  </span>
+                  <div className="leading-tight">
+                    <div className="font-space text-[12px] font-bold text-[#111111]">STEM &amp; Certs</div>
+                    <div className="text-[11px] text-[#64748B]">Physics · Tech+</div>
+                  </div>
+                </div>
 
-              <button
-                onClick={() => setCurrentSlide((prev) => (prev === 0 ? SLIDES.length - 1 : prev - 1))}
-                className="p-2 text-[#111111] hover:bg-[#EAEAEA] rounded-full transition-colors cursor-pointer"
-                aria-label="Previous slide"
-              >
-                <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
-                  <path d="M10 3.5L5.5 8L10 12.5" stroke="currentColor" strokeWidth="2.2" fill="none" strokeLinecap="round" />
-                </svg>
-              </button>
-
-              <div className="flex items-center gap-1.5">
-                {SLIDES.map((s, idx) => (
-                  <button
-                    key={s.id}
-                    onClick={() => setCurrentSlide(idx)}
-                    aria-label={`Slide ${idx + 1}`}
-                    className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
-                      currentSlide === idx ? "w-7 bg-[#1A56C4]" : "w-2.5 bg-[#CCCCCC] hover:bg-[#999999]"
-                    }`}
+                <div
+                  aria-hidden="true"
+                  className="hidden sm:flex items-center gap-2.5 absolute bottom-4 left-5 bg-white/95 rounded-2xl px-3.5 py-2.5 shadow-[0_8px_24px_rgba(17,17,17,0.08)]"
+                >
+                  <Image
+                    src="/images/lyceon-mark.svg"
+                    alt=""
+                    width={28}
+                    height={28}
+                    priority
+                    className="rounded-lg"
                   />
-                ))}
-              </div>
+                  <div className="leading-tight">
+                    <div className="font-space text-[12px] font-bold text-[#111111]">Glicko-2</div>
+                    <div className="text-[11px] text-[#64748B]">Mastery &amp; Arena</div>
+                  </div>
+                </div>
 
-              <button
-                onClick={() => setCurrentSlide((prev) => (prev + 1) % SLIDES.length)}
-                className="p-2 text-[#111111] hover:bg-[#EAEAEA] rounded-full transition-colors cursor-pointer"
-                aria-label="Next slide"
-              >
-                <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
-                  <path d="M6 3.5L10.5 8L6 12.5" stroke="currentColor" strokeWidth="2.2" fill="none" strokeLinecap="round" />
-                </svg>
-              </button>
+                <div
+                  aria-hidden="true"
+                  className="hidden sm:flex items-center gap-2 absolute bottom-5 right-5 bg-[#0B193C] text-white rounded-2xl px-3.5 py-2.5 shadow-[0_8px_24px_rgba(11,25,60,0.22)]"
+                >
+                  <span className="font-space text-[12px] font-bold">Speed 3s</span>
+                  <span className="text-white/40">·</span>
+                  <span className="font-space text-[12px] font-bold text-[#F7995F]">Long 90s</span>
+                </div>
+
+                {/* Central LYCEON Duel Studio Card */}
+                <div
+                  aria-hidden="true"
+                  className="relative z-10 w-full max-w-[300px] sm:max-w-[320px] bg-white rounded-2xl shadow-[0_16px_44px_rgba(17,17,17,0.12),0_0_0_1px_rgba(17,17,17,0.05)] overflow-clip"
+                >
+                  <div className="grid grid-cols-3 items-center px-4 py-2.5 bg-[#FAF8F4] text-center">
+                    <div className="text-left">
+                      <div className="text-[10px] font-semibold uppercase text-[#64748B]">You</div>
+                      <div className="font-space text-[17px] font-black text-[#111111]">240</div>
+                    </div>
+                    <div>
+                      <div className="text-[10px] font-semibold text-[#64748B]">Round 4/10</div>
+                      <div className="font-space text-[14px] font-black text-[#B84D00]">0:06</div>
+                    </div>
+                    <div className="text-right">
+                      <div className="text-[10px] font-semibold uppercase text-[#64748B]">Rival</div>
+                      <div className="font-space text-[17px] font-black text-[#1A56C4]">220</div>
+                    </div>
+                  </div>
+
+                  <div className="px-4 py-4 text-center space-y-3">
+                    <div className="text-[11px] font-bold uppercase tracking-wider text-[#64748B]">
+                      Translate
+                    </div>
+                    <div>
+                      <div className="font-hanzi text-[34px] sm:text-[40px] font-bold leading-none text-[#111111]">
+                        谢谢
+                      </div>
+                      <div className="text-[12px] font-medium text-[#64748B] mt-1">xiè xie</div>
+                    </div>
+                    <div className="grid grid-cols-2 gap-1.5 text-left text-[11px] font-semibold">
+                      <div className="rounded-lg bg-[#E8F5EE] text-[#0F6E3D] px-2.5 py-2">
+                        Thank you
+                      </div>
+                      <div className="rounded-lg bg-[#F4F3EF] text-[#555555] px-2.5 py-2">
+                        Goodbye
+                      </div>
+                    </div>
+                  </div>
+                  <div className="h-1 w-full bg-gradient-to-r from-[#F37021] via-[#1A56C4] to-[#0B193C]" />
+                </div>
+              </div>
             </div>
           </div>
         </div>

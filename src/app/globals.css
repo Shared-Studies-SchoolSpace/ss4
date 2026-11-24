@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@500;700;900&family=Outfit:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800;900&display=swap");
 @import "tailwindcss";
 
 @theme {
@@ -12,6 +12,7 @@
   /* SS4 Font Families */
   --font-space: "Space Grotesk", sans-serif;
   --font-avenir: "Outfit", "Avenir Next", -apple-system, sans-serif;
+  --font-hanzi: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
 
   /* Material 3 Semantic Colors Mapped to Varsity Theme */
   --color-m3-primary: #1A56C4;
@@ -73,6 +74,12 @@ html {
   scroll-behavior: smooth;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -92,30 +99,35 @@ body {
   font-family: var(--font-avenir);
 }
 
-/* SS4 Elevated Surface Card (Borderless tonal separation) */
+.font-hanzi {
+  font-family: var(--font-hanzi);
+}
+
+/* SS4 Microsoft-Inspired Elevated Product Card */
 .varsity-card {
   background: var(--color-m3-surface);
-  border-radius: 24px;
-  box-shadow: 0 2px 12px rgba(17, 17, 17, 0.04);
+  border-radius: 22px;
+  box-shadow: 0 2px 14px rgba(17, 17, 17, 0.05), 0 0 0 1px rgba(17, 17, 17, 0.04);
   transition: box-shadow 200ms cubic-bezier(0.2, 0, 0, 1), transform 200ms cubic-bezier(0.2, 0, 0, 1);
 }
 
 .varsity-card:hover {
   background: var(--color-m3-surface);
-  box-shadow: 0 10px 28px rgba(17, 17, 17, 0.08);
-  transform: translateY(-1.5px);
+  box-shadow: 0 12px 30px rgba(17, 17, 17, 0.09), 0 0 0 1px rgba(26, 86, 196, 0.14);
+  transform: translateY(-2px);
 }
 
-/* SS4 Material 3 Pill Button - Primary (Filled) */
+/* SS4 Primary CTA Button (Microsoft-inspired crisp solid fill) */
 .varsity-btn-primary {
   background-color: var(--color-brand-primary);
   color: #FFFFFF;
-  border-radius: 16px;
-  min-height: 48px;
-  padding: 10px 24px;
+  border-radius: 10px;
+  min-height: 44px;
+  padding: 10px 20px;
   font-weight: 700;
+  font-size: 14px;
   font-family: var(--font-avenir);
-  transition: background-color 180ms cubic-bezier(0.2, 0, 0, 1), box-shadow 180ms cubic-bezier(0.2, 0, 0, 1);
+  transition: background-color 180ms cubic-bezier(0.2, 0, 0, 1), box-shadow 180ms cubic-bezier(0.2, 0, 0, 1), transform 140ms ease;
   cursor: pointer;
   border: none;
   display: inline-flex;
@@ -136,17 +148,18 @@ body {
   transform: scale(0.98);
 }
 
-/* SS4 Material 3 Pill Button - Secondary (Tonal Fill, no wire border) */
+/* SS4 Secondary Button (Tonal Fill) */
 .varsity-btn-secondary {
   background-color: var(--color-m3-primary-container);
   color: var(--color-brand-primary);
   border: none;
-  border-radius: 16px;
-  min-height: 48px;
-  padding: 10px 24px;
+  border-radius: 10px;
+  min-height: 44px;
+  padding: 10px 20px;
   font-weight: 700;
+  font-size: 14px;
   font-family: var(--font-avenir);
-  transition: background-color 180ms cubic-bezier(0.2, 0, 0, 1);
+  transition: background-color 180ms cubic-bezier(0.2, 0, 0, 1), transform 140ms ease;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -161,6 +174,18 @@ body {
 
 .varsity-btn-secondary:active {
   transform: scale(0.98);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .varsity-card,
+  .varsity-btn-primary,
+  .varsity-btn-secondary {
+    transition: none;
+  }
+
+  .varsity-card:hover {
+    transform: none;
+  }
 }
 
 /* Focus & Browser Surface Polish */

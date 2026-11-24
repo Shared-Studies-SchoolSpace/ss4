@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="LYCEON">
+<rect width="100" height="100" rx="25.6" fill="#115BB4"/>
+<path d="M30.96 20.19H46.84V63.12H71.74V78.73H39.66A8.7 8.7 0 0 1 30.96 70.03Z" fill="#F37021"/><path d="M30.96 63.12L46.84 78.73H39.66A8.7 8.7 0 0 1 30.96 70.03Z" fill="#F7995F"/><path d="M46.84 63.12H56.26L46.84 78.73Z" fill="#C8571B"/>
+<circle cx="39.03" cy="25.44" r="2.56" fill="#fff"/>
+</svg>
