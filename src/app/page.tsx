@@ -24,7 +24,7 @@ export default function Home() {
       />
 
       <main className="flex-1 w-full overflow-x-clip">
-        <HeroBanner />
+        <HeroBanner onSelectComponent={setSelectedComponent} />
         <QuickLinks onSelectComponent={setSelectedComponent} />
         <ProductCardGrid onSelectComponent={setSelectedComponent} />
         <MidPromoBanner />

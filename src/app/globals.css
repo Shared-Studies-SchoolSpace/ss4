@@ -200,3 +200,31 @@ button:focus-visible {
   background-color: #1A56C4;
   color: #FFFFFF;
 }
+
+/* Native Scroll-Snap Hero Carousel */
+.hero-carousel-track {
+  position: relative;
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+  touch-action: pan-y pinch-zoom;
+  scrollbar-width: none;
+}
+
+.hero-carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-carousel-track {
+    scroll-behavior: smooth;
+  }
+}
+
+.hero-carousel-slide {
+  flex: 0 0 100%;
+  min-inline-size: 100%;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+}
